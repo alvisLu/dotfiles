@@ -31,7 +31,7 @@ call vundle#end()
 filetype plugin indent on
 
 
-" Generally set
+" Generally settings
 set hlsearch              "高亮度反白
 set autoindent            "自動縮排
 set nu                    "顯示行號
@@ -43,7 +43,7 @@ set smartindent           "Autotabs for certain code
 set ignorecase            "忽略大小寫
 set mouse=a               "在Terminal 可以使用滑鼠
 set guifont=monospace\ 15 "gvim font size
-" Color setting
+" Color settings
 set t_Co=256
 set t_ut=
 colorscheme codedark
@@ -89,7 +89,7 @@ let g:ctrlp_working_path_mode = 'r'
 nmap <leader>p :CtrlP<cr>
 nmap <leader>bb :CtrlPBuffer<cr>
 nmap <leader>bm :CtrlPMixed<cr>
-nmap <leader>bs :CtrlPMRU<cr>
+nmap <leader>bs f:CtrlPMRU<cr>
 
 
 " Ack
