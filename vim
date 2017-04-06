@@ -1,0 +1,1 @@
+/home/alvis/.vim
