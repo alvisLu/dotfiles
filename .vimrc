@@ -104,17 +104,18 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-" -- eslint
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = 'eslint'
 
 " map F1~F12 function
 " -- switch hlsearch
 nmap <F2> :set hlsearch!<CR>
+" -- check format
+nmap <F3> :Autoformat<CR>
+" -- switch tab or satpce
+nmap <F4> :set expandtab!<CR>
+" -- switch NERDTree
 nmap <F8> :NERDTreeToggle<CR>
 nmap <F9> :TagbarToggle<CR>
-" -- check format
-noremap <F3> :Autoformat<CR>
+
 
 
 " vim-airline
@@ -157,12 +158,6 @@ nmap <leader>a :Ack -i<Space>
 " Markdown preview
 " -- vim-instant-markdown
 let g:instant_markdown_autostart = 0 " manually trigger preview via the command `:InstantMarkdownPreview`
-" --vim-markdown-preview
-"let vim_markdown_preview_github=1
-"let vim_markdown_preview_hotkey='<C-m>'
-"let vim_markdown_preview_use_xdg_open=1
-"let vim_markdown_preview_browser='Google Chrome'
-"filetype plugin on
 " -- vim-markdown
 let g:instant_markdown_open_to_the_world = 1
 let g:vim_markdown_folding_disabled = 1
