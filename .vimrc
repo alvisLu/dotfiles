@@ -72,7 +72,7 @@ set mouse=a               "在Terminal 可以使用滑鼠
 set guifont=monospace\ 13 "font size
 " tab, space view
 set list
-set listchars=tab:›\ ,trail:•,extends:#,precedes:«,nbsp:⎵
+set listchars=tab:›\ ,trail:•,extends:»,precedes:«,nbsp:⎵
 
 " Colorscheme settings
 " -- vim-code-dark
@@ -114,7 +114,7 @@ nmap <F3> :Autoformat<CR>
 nmap <F4> :set expandtab!<CR>
 " -- switch NERDTree
 nmap <F8> :NERDTreeToggle<CR>
-nmap <F9> :TagbarToggle<CR>
+"nmap <F9> :TagbarToggle<CR>
 
 
 
