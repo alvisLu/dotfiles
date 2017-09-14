@@ -18,6 +18,9 @@ Plug 'tpope/vim-sensible'
 " NERDTreeToggle
 Plug 'scrooloose/nerdtree'
 
+"TagbarToggle
+Plug 'https://github.com/majutsushi/tagbar.git'
+
 " vim-ctrlp
 Plug 'https://github.com/kien/ctrlp.vim.git'
 
@@ -85,6 +88,14 @@ colorscheme codedark
 set t_Co=256
 set t_ut=
 
+" useing ctrl+shift+(c/v)
+if has("gui_running")
+	vmap <C-S-x> "+x
+	vmap <C-S-c> "+y
+	imap <C-S-v> <Esc>"+gP
+endif
+
+
 " Indent Line
 " -- vim-indent-guides
 nmap <leader>ig :IndentGuidesToggle<cr>
@@ -114,8 +125,8 @@ nmap <F3> :Autoformat<CR>
 nmap <F4> :set expandtab!<CR>
 " -- switch NERDTree
 nmap <F8> :NERDTreeToggle<CR>
-"nmap <F9> :TagbarToggle<CR>
-
+" -- switch TagbarToggle
+nmap <F9> :TagbarToggle<CR>
 
 
 " vim-airline
@@ -140,9 +151,10 @@ nmap <leader>q :bp <BAR> bd #<CR>
 
 " Ctrl P
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
-  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+	\ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+	\ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
 \}
+
 let g:ctrlp_working_path_mode = 'r'
 nmap <leader>p :CtrlP<cr>
 nmap <leader>bb :CtrlPBuffer<cr>
@@ -193,10 +205,10 @@ let g:acp_enableAtStartup = 0
 "
 " " Define dictionary.
  let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-    \ }
+	\ 'default' : '',
+	\ 'vimshell' : $HOME.'/.vimshell_hist',
+	\ 'scheme' : $HOME.'/.gosh_completions'
+	\ }
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
