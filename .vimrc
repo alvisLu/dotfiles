@@ -61,18 +61,20 @@ call plug#end()
 
 
 " Generally settings
-set hlsearch              "高亮度反白
-set autoindent            "自動縮排
-set nu                    "顯示行號
-syntax on                 "語法檢驗
+set hlsearch                "高亮度反白
+set autoindent              "自動縮排
+set nu                      "顯示行號
+syntax on                   "語法檢驗
 filetype plugin indent on
-set tabstop=4             "使用 4 個 spaces 來顯示 tab
-set shiftwidth=4          "使用 4 個 spaces 來縮排
-set expandtab             "按下 tab 時，使用 4 個 spaces
-set smartindent           "Autotabs for certain code
-set ignorecase            "忽略大小寫
-set mouse=a               "在Terminal 可以使用滑鼠
-set guifont=monospace\ 13 "font size
+set tabstop=4               "使用 4 個 spaces 來顯示 tab
+set shiftwidth=4            "使用 4 個 spaces 來縮排
+set expandtab               "按下 tab 時，使用 4 個 spaces
+set smartindent             "Autotabs for certain code
+set ignorecase              "忽略大小寫
+set mouse=a                 "在Terminal 可以使用滑鼠
+set guifont=monospace\ 13   "font size
+set fileencodings=utf8,big5 " 讓檔案可以使用 utf8 或是 big5 編碼來開啟
+
 " tab, space view
 set list
 set listchars=tab:›\ ,trail:•,extends:»,precedes:«,nbsp:⎵
@@ -153,8 +155,7 @@ nmap <leader>q :bp <BAR> bd #<CR>
 let g:ctrlp_custom_ignore = {
 	\ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
 	\ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
-\}
-
+	\}
 let g:ctrlp_working_path_mode = 'r'
 nmap <leader>p :CtrlP<cr>
 nmap <leader>bb :CtrlPBuffer<cr>
@@ -194,17 +195,17 @@ map / <Plug>(easymotion-sn)
 
 
 
-"" Disable AutoComplPop.
+" Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
- let g:neocomplete#enable_at_startup = 1
-" " Use smartcase.
- let g:neocomplete#enable_smart_case = 1
-" " Set minimum syntax keyword length.
- let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
 "
-" " Define dictionary.
- let g:neocomplete#sources#dictionary#dictionaries = {
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
 	\ 'default' : '',
 	\ 'vimshell' : $HOME.'/.vimshell_hist',
 	\ 'scheme' : $HOME.'/.gosh_completions'
@@ -214,7 +215,7 @@ let g:acp_enableAtStartup = 0
 if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
 endif
-    let g:neocomplete#keyword_patterns['default'] ='\h\w*'
+let g:neocomplete#keyword_patterns['default'] ='\h\w*'
 
 " Plugin key-mappings.
 inoremap <expr><C-g> neocomplete#undo_completion()
