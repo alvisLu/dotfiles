@@ -15,6 +15,9 @@ Plug 'vim-airline/vim-airline-themes'
 " vim-sensible
 Plug 'tpope/vim-sensible'
 
+" vim-fugitive"
+Plug 'https://github.com/tpope/vim-fugitive.git'
+
 " NERDTreeToggle
 Plug 'scrooloose/nerdtree'
 
@@ -39,6 +42,9 @@ Plug 'pangloss/vim-javascript'
 
 " formatter
 Plug 'https://github.com/Chiel92/vim-autoformat.git'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
 
 " vim-Markdown
 Plug 'https://github.com/plasticboy/vim-markdown.git'
@@ -73,9 +79,9 @@ set smartindent             "Autotabs for certain code
 set ignorecase              "忽略大小寫
 set mouse=a                 "在Terminal 可以使用滑鼠
 set guifont=monospace\ 13   "font size
-set fileencodings=utf8,big5 " 讓檔案可以使用 utf8 或是 big5 編碼來開啟
-
-" tab, space view
+set fileencodings=utf8,big5 "讓檔案可以使用 utf8 或是 big5 編碼來開啟
+set cursorline              "顯示當前指標的行例
+" 顯示 tab, space
 set list
 set listchars=tab:›\ ,trail:•,extends:»,precedes:«,nbsp:⎵
 
@@ -90,12 +96,10 @@ colorscheme codedark
 set t_Co=256
 set t_ut=
 
-" useing ctrl+shift+(c/v)
-if has("gui_running")
-	vmap <C-S-x> "+x
-	vmap <C-S-c> "+y
-	imap <C-S-v> <Esc>"+gP
-endif
+" useing ctrl+[shift]+(x/c/v)
+vmap <C-S-x> "+x
+vmap <C-S-c> "+y
+imap <C-S-v> <Esc>"+gp
 
 
 " Indent Line
@@ -163,6 +167,27 @@ nmap <leader>bm :CtrlPMixed<cr>
 nmap <leader>bs f:CtrlPMRU<cr>
 
 
+" vim-prettier
+" max line lengh that prettier will wrap on
+let g:prettier#config#print_width = 80
+" number of spaces per indentation level
+let g:prettier#config#tab_width = 4
+" use tabs over spaces
+let g:prettier#config#use_tabs = 'false'
+" print semicolons
+let g:prettier#config#semi = 'true'
+" single quotes over double quotes
+let g:prettier#config#single_quote = 'false'
+" print spaces between brackets
+let g:prettier#config#bracket_spacing = 'true'
+" put > on the last line instead of new line
+let g:prettier#config#jsx_bracket_same_line = 'true'
+" none|es5|all
+let g:prettier#config#trailing_comma = 'none'
+" flow|babylon|typescript|postcss|json|graphql
+let g:prettier#config#parser = 'babylon'
+
+
 " Ack
 cnoreabbrev Ack Ack!
 nmap <leader>a :Ack -i<Space>
@@ -194,7 +219,6 @@ nmap s <Plug>(easymotion-overwin-f2)
 map / <Plug>(easymotion-sn)
 
 
-
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
@@ -211,11 +235,13 @@ let g:neocomplete#sources#dictionary#dictionaries = {
 	\ 'scheme' : $HOME.'/.gosh_completions'
 	\ }
 
+
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] ='\h\w*'
+
 
 " Plugin key-mappings.
 inoremap <expr><C-g> neocomplete#undo_completion()
