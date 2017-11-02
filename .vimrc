@@ -1,14 +1,10 @@
 call plug#begin()
 
 " vim-colors-themes
-" -- vim-kalisi
-Plug 'https://github.com/freeo/vim-kalisi'
-" -- vim-one
-Plug 'https://github.com/rakr/vim-one.git'
 " -- vim-code-dark
 Plug 'tomasiser/vim-code-dark'
-" -- vim-dracula-theme
-Plug 'https://github.com/dracula/vim.git'
+" -- vim-hybrid-theme
+Plug 'kristijanhusak/vim-hybrid-material'
 
 
 " vim-airline and themes
@@ -88,24 +84,20 @@ set cursorline              "顯示當前指標的行例
 set list
 set listchars=tab:›\ ,trail:•,extends:»,precedes:«,nbsp:⎵
 
-set background=dark
 " Colorscheme settings
 " -- vim-code-dark
-"colorscheme codedark
-" -- kalisi
-"colorscheme kalisi
-" -- one
-"colorscheme one
-"let g:one_allow_italics = 1
-" -- dracula
-"if has("gui_running")
-    colorscheme my-dracula
-"else
-"    color dracula
-"endif
+" colorscheme codedark
+" -- Tomorrow
+"colorscheme Tomorrow-Night
+" --hybrid
+"colorscheme hybrid_reverse
+colorscheme hybrid_material
+let g:enable_italic_font = 1
 
+set background=dark
 set t_Co=256
 set t_ut=
+
 
 " useing ctrl+[shift]+(x/c/v)
 vmap <C-S-x> "+x
@@ -148,10 +140,9 @@ nmap <F9> :TagbarToggle<CR>
 
 " vim-airline
 " -- theme
-"let g:airline_theme='kalisi'
-"let g:airline_theme='one'
+"let g:airline_theme='tomorrow'
+let g:airline_theme = "hybrid"
 "let g:airline_theme ='codedark'
-let g:airline_theme='dracula'
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
