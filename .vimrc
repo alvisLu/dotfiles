@@ -7,6 +7,9 @@ Plug 'https://github.com/freeo/vim-kalisi'
 Plug 'https://github.com/rakr/vim-one.git'
 " -- vim-code-dark
 Plug 'tomasiser/vim-code-dark'
+" -- vim-dracula-theme
+Plug 'https://github.com/dracula/vim.git'
+
 
 " vim-airline and themes
 Plug 'vim-airline/vim-airline'
@@ -78,21 +81,29 @@ set expandtab               "按下 tab 時，使用 4 個 spaces
 set smartindent             "Autotabs for certain code
 set ignorecase              "忽略大小寫
 set mouse=a                 "在Terminal 可以使用滑鼠
-set guifont=monospace\ 13   "font size
+set guifont=monospace\ 13   "font: monospace/monaco, size: 13
 set fileencodings=utf8,big5 "讓檔案可以使用 utf8 或是 big5 編碼來開啟
 set cursorline              "顯示當前指標的行例
 " 顯示 tab, space
 set list
 set listchars=tab:›\ ,trail:•,extends:»,precedes:«,nbsp:⎵
 
+set background=dark
 " Colorscheme settings
 " -- vim-code-dark
-colorscheme codedark
+"colorscheme codedark
 " -- kalisi
 "colorscheme kalisi
 " -- one
 "colorscheme one
-"set background=dark
+"let g:one_allow_italics = 1
+" -- dracula
+"if has("gui_running")
+    colorscheme my-dracula
+"else
+"    color dracula
+"endif
+
 set t_Co=256
 set t_ut=
 
@@ -139,12 +150,12 @@ nmap <F9> :TagbarToggle<CR>
 " -- theme
 "let g:airline_theme='kalisi'
 "let g:airline_theme='one'
-let g:airline_theme = 'codedark'
+"let g:airline_theme ='codedark'
+let g:airline_theme='dracula'
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
-
 
 " Buffer management
 set hidden
