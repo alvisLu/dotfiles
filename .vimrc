@@ -1,15 +1,12 @@
 call plug#begin()
 
 " vim-colors-themes
-" -- vim-kalisi
-Plug 'https://github.com/freeo/vim-kalisi'
 " -- vim-one
 Plug 'https://github.com/rakr/vim-one.git'
 " -- vim-code-dark
 Plug 'tomasiser/vim-code-dark'
-" -- vim-dracula-theme
-Plug 'https://github.com/dracula/vim.git'
-
+" -- vim-hybrid-material
+Plug 'https://github.com/kristijanhusak/vim-hybrid-material.git'
 
 " vim-airline and themes
 Plug 'vim-airline/vim-airline'
@@ -92,18 +89,13 @@ set background=dark
 " Colorscheme settings
 " -- vim-code-dark
 "colorscheme codedark
-" -- kalisi
-"colorscheme kalisi
 " -- one
 "colorscheme one
 "let g:one_allow_italics = 1
-" -- dracula
-"if has("gui_running")
-    colorscheme my-dracula
-"else
-"    color dracula
-"endif
 
+let g:enable_bold_font = 1
+let g:enable_italic_font = 1
+colorscheme hybrid_material
 set t_Co=256
 set t_ut=
 
@@ -148,10 +140,9 @@ nmap <F9> :TagbarToggle<CR>
 
 " vim-airline
 " -- theme
-"let g:airline_theme='kalisi'
 "let g:airline_theme='one'
 "let g:airline_theme ='codedark'
-let g:airline_theme='dracula'
+let g:airline_theme = 'hybrid'
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
