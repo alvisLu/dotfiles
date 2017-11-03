@@ -1,12 +1,11 @@
 call plug#begin()
 
 " vim-colors-themes
-" -- vim-one
-Plug 'https://github.com/rakr/vim-one.git'
 " -- vim-code-dark
 Plug 'tomasiser/vim-code-dark'
-" -- vim-hybrid-material
-Plug 'https://github.com/kristijanhusak/vim-hybrid-material.git'
+" -- vim-hybrid-theme
+Plug 'kristijanhusak/vim-hybrid-material'
+
 
 " vim-airline and themes
 Plug 'vim-airline/vim-airline'
@@ -85,19 +84,20 @@ set cursorline              "顯示當前指標的行例
 set list
 set listchars=tab:›\ ,trail:•,extends:»,precedes:«,nbsp:⎵
 
-set background=dark
 " Colorscheme settings
+set background=dark
+set t_Co=256
+set t_ut=
+" -- Tomorrow
+"colorscheme Tomorrow-Night
 " -- vim-code-dark
 "colorscheme codedark
-" -- one
-"colorscheme one
-"let g:one_allow_italics = 1
-
+" --hybrid
+"colorscheme hybrid_reverse
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 colorscheme hybrid_material
-set t_Co=256
-set t_ut=
+
 
 " useing ctrl+[shift]+(x/c/v)
 vmap <C-S-x> "+x
@@ -140,9 +140,9 @@ nmap <F9> :TagbarToggle<CR>
 
 " vim-airline
 " -- theme
-"let g:airline_theme='one'
+"let g:airline_theme='tomorrow'
 "let g:airline_theme ='codedark'
-let g:airline_theme = 'hybrid'
+let g:airline_theme = "hybrid"
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
