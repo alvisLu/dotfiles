@@ -5,7 +5,9 @@ call plug#begin()
 Plug 'tomasiser/vim-code-dark'
 " -- vim-hybrid-theme
 Plug 'kristijanhusak/vim-hybrid-material'
-
+" -- vim tomarrow
+"  install to vim/colors
+" https://github.com/chriskempson/vim-tomorrow-theme
 
 " vim-airline and themes
 Plug 'vim-airline/vim-airline'
@@ -31,6 +33,7 @@ Plug 'junegunn/fzf'
 
 " vim-ack
 Plug 'mileszs/ack.vim'
+
 " vim-easymotion
 Plug 'https://github.com/easymotion/vim-easymotion.git'
 
@@ -95,8 +98,14 @@ set t_ut=
 " --hybrid
 "colorscheme hybrid_reverse
 let g:enable_bold_font = 1
-let g:enable_italic_font = 1
 colorscheme hybrid_material
+if has ("gui_running")
+    let g:enable_italic_font = 1
+endif
+
+set background=dark
+set t_Co=256
+set t_ut=
 
 
 " useing ctrl+[shift]+(x/c/v)
@@ -115,7 +124,6 @@ let g:indent_guides_guide_size = 1
 
 
 " Syntastic
-"
 " Default setting
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -139,14 +147,12 @@ nmap <F9> :TagbarToggle<CR>
 
 
 " vim-airline
-" -- theme
-"let g:airline_theme='tomorrow'
-"let g:airline_theme ='codedark'
-let g:airline_theme = "hybrid"
-" Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
-" Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+" -- theme
+let g:airline_theme='tomorrow'
+"let g:airline_theme = 'hybrid'
+"let g:airline_theme ='codedark'
 
 " Buffer management
 set hidden
@@ -170,23 +176,14 @@ nmap <leader>bs f:CtrlPMRU<cr>
 
 
 " vim-prettier
-" max line lengh that prettier will wrap on
 let g:prettier#config#print_width = 80
-" number of spaces per indentation level
 let g:prettier#config#tab_width = 4
-" use tabs over spaces
 let g:prettier#config#use_tabs = 'false'
-" print semicolons
 let g:prettier#config#semi = 'true'
-" single quotes over double quotes
 let g:prettier#config#single_quote = 'false'
-" print spaces between brackets
 let g:prettier#config#bracket_spacing = 'true'
-" put > on the last line instead of new line
 let g:prettier#config#jsx_bracket_same_line = 'true'
-" none|es5|all
 let g:prettier#config#trailing_comma = 'none'
-" flow|babylon|typescript|postcss|json|graphql
 let g:prettier#config#parser = 'babylon'
 
 
@@ -205,8 +202,8 @@ let g:vim_markdown_toc_autofit = 1
 
 
 " Easy Motion
-let g:EasyMotion_do_mapping = 0 " Disable defautl mappings
-let g:EasyMotion_smartcase = 1 " Turn on case insensitive feature
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_smartcase = 1
 " jk motion and line mtion
 let mapleader='z'
 map <Leader>l <Plug>(easymotion-lineforward)
