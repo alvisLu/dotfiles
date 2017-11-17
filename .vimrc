@@ -1,12 +1,10 @@
 call plug#begin()
 
 " vim-colors-themes
-" -- vim-code-dark
-Plug 'tomasiser/vim-code-dark'
 " -- vim-hybrid-theme
 Plug 'kristijanhusak/vim-hybrid-material'
 " -- vim tomarrow
-"  install to vim/colors
+"  Manul install to vim/colors
 " https://github.com/chriskempson/vim-tomorrow-theme
 
 " vim-airline and themes
@@ -24,6 +22,9 @@ Plug 'scrooloose/nerdtree'
 
 "TagbarToggle
 Plug 'https://github.com/majutsushi/tagbar.git'
+
+" Tabular
+Plug 'https://github.com/godlygeek/tabular.git'
 
 " vim-ctrlp
 Plug 'https://github.com/kien/ctrlp.vim.git'
@@ -50,11 +51,8 @@ Plug 'prettier/vim-prettier', {
 
 " vim-Markdown
 Plug 'https://github.com/plasticboy/vim-markdown.git'
-Plug 'https://github.com/JamshedVesuna/vim-markdown-preview.git'
-Plug 'https://github.com/suan/vim-instant-markdown.git'
-
-" markdown tabular
-Plug 'https://github.com/godlygeek/tabular.git'
+" vim-Markdown-Preview
+Plug 'iamcco/markdown-preview.vim'
 
 " vim-easy-align
 Plug 'junegunn/vim-easy-align'
@@ -93,12 +91,10 @@ set t_Co=256
 set t_ut=
 " -- Tomorrow
 "colorscheme Tomorrow-Night
-" -- vim-code-dark
-"colorscheme codedark
 " --hybrid
 "colorscheme hybrid_reverse
-let g:enable_bold_font = 1
 colorscheme hybrid_material
+let g:enable_bold_font = 1
 if has ("gui_running")
     let g:enable_italic_font = 1
 endif
@@ -152,7 +148,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " -- theme
 let g:airline_theme='tomorrow'
 "let g:airline_theme = 'hybrid'
-"let g:airline_theme ='codedark'
+
 
 " Buffer management
 set hidden
@@ -192,11 +188,7 @@ cnoreabbrev Ack Ack!
 nmap <leader>a :Ack -i<Space>
 
 
-" Markdown preview
-" -- vim-instant-markdown
-let g:instant_markdown_autostart = 0 " manually trigger preview via the command `:InstantMarkdownPreview`
-" -- vim-markdown
-let g:instant_markdown_open_to_the_world = 1
+" vim Markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
 
