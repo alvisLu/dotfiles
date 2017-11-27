@@ -1,4 +1,4 @@
-#Linux System Environment Configration
+# Linux System Environment Configration
 
 Store my Linux System Environment Configration
 
