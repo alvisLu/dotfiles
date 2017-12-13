@@ -5,7 +5,6 @@ Store my Linux System Environment Configration
 ## Pre-Install
 ### vim
 1. vim-Ack!  [ack](https://beyondgrep.com/install/)
-1. TagbarToggle [ctags](http://ctags.sourceforge.net/)
 
 ### tmux
 1. tpm [tpm](https://github.com/tmux-plugins/tpm)
