@@ -85,11 +85,12 @@ set mouse=a                 "在Terminal 可以使用滑鼠
 set guifont=monospace\ 13   "font: monospace/monaco, size: 13
 set fileencodings=utf8,big5 "讓檔案可以使用 utf8 或是 big5 編碼來開啟
 set cursorline              "顯示當前指標的行例
-" -- 顯示 tab, space
+
+" -- 顯示 tab, space -- "
 set list
 set listchars=tab:›\ ,trail:•,extends:»,precedes:«,nbsp:⎵
 
-" -- Colorscheme settings
+" -- Colorscheme settings -- "
 set background=dark
 set t_Co=256
 set t_ut=
@@ -102,14 +103,15 @@ if has ("gui_running")
     let g:enable_italic_font = 1
 endif
 
-set background=dark
-set t_Co=256
-set t_ut=
-
-" -- useing ctrl+[shift]+(x/c/v)
+" -- useing ctrl+[shift]+(x/c/v) -- "
 vmap <C-S-x> "+x
 vmap <C-S-c> "+y
 imap <C-S-v> <Esc>"+gp
+
+" -- leader anc localleader -- "
+"let mapleader = ','
+let maplocalleader='z'
+
 "--------------------------------------------------------------------------------------"
 
 
@@ -117,12 +119,6 @@ imap <C-S-v> <Esc>"+gp
 "--------------------------------------------------------------------------------------"
 " Plugin
 "--------------------------------------------------------------------------------------"
-
-" -- leader anc localleader -- "
-let mapleader = ','
-let maplocalleader='z'
-
-
 " -- map F1~F12 function -- "
 " switch hlsearch
 nmap <F2> :set hlsearch!<CR>
@@ -171,16 +167,15 @@ nmap <leader>[ :bprevious<CR>
 nmap <leader>q :bp <BAR> bd #<CR>
 
 
+" -- Fugitive --"
+set diffopt+=vertical
+
 " -- Ctrl P --"
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
     \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
     \}
 let g:ctrlp_working_path_mode = 'r'
-nmap <leader>p :CtrlP<cr>
-nmap <leader>bb :CtrlPBuffer<cr>
-nmap <leader>bm :CtrlPMixed<cr>
-nmap <leader>bs f:CtrlPMRU<cr>
 
 
 " --  vim-prettier -- "
