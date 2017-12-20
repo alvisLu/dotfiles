@@ -30,7 +30,7 @@ Plug 'https://github.com/majutsushi/tagbar.git'
 Plug 'https://github.com/godlygeek/tabular.git'
 
 " vim-ctrlp
-Plug 'https://github.com/kien/ctrlp.vim.git'
+"Plug 'https://github.com/kien/ctrlp.vim.git'
 
 " FZF
 Plug 'junegunn/fzf'
@@ -160,8 +160,8 @@ let g:airline_theme='tomorrow'
 
 " -- Buffer management --"
 set hidden
-nmap <C-n><C-n> :bnext<cr>
-nmap <C-n>n :bnext<cr>
+nmap <C-n><C-n> :bnext<CR>
+nmap <C-n>n :bnext<CR>
 nmap <leader>] :bnext<CR>
 nmap <leader>[ :bprevious<CR>
 nmap <leader>q :bp <BAR> bd #<CR>
@@ -170,12 +170,24 @@ nmap <leader>q :bp <BAR> bd #<CR>
 " -- Fugitive --"
 set diffopt+=vertical
 
+
 " -- Ctrl P --"
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
-    \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
-    \}
-let g:ctrlp_working_path_mode = 'r'
+"let g:ctrlp_custom_ignore = {
+"    \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+"    \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+"    \}
+"let g:ctrlp_working_path_mode = 'r'
+
+
+" -- FZF --"
+nmap <leader>f :FZF<CR>
+let g:fzf_layout = { 'down': '~40%' }
+
+" Enable per-command history.
+" CTRL-N and CTRL-P will be automatically bound to next-history and
+" previous-history instead of down and up. If you don't like the change,
+" explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
+let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 
 " --  vim-prettier -- "
