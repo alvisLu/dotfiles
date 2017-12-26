@@ -106,7 +106,7 @@ endif
 " -- useing ctrl+[shift]+(x/c/v) -- "
 vmap <C-S-x> "+x
 vmap <C-S-c> "+y
-imap <C-S-v> <Esc>"+gp
+imap <C-S-v> <Esc> "+gp
 
 " -- leader anc localleader -- "
 "let mapleader = ','
@@ -180,8 +180,12 @@ set diffopt+=vertical
 
 
 " -- FZF --"
+" Don't forget comment following line, if use CtrlP.
+nmap <C-p> :FZF<CR>
+
 nmap <leader>f :FZF<CR>
 let g:fzf_layout = { 'down': '~40%' }
+
 
 " Enable per-command history.
 " CTRL-N and CTRL-P will be automatically bound to next-history and
