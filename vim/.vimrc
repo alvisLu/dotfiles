@@ -5,7 +5,7 @@ call plug#begin()
 Plug 'kristijanhusak/vim-hybrid-material'
 " -- vim tomarrow
 "  Manul install to vim/colors
-" https://github.com/chriskempson/vim-tomorrow-theme
+" color scheme git: https://github.com/chriskempson/vim-tomorrow-theme
 
 " vim-airline and themes
 Plug 'vim-airline/vim-airline'
