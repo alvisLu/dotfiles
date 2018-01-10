@@ -23,8 +23,8 @@ Plug 'scrooloose/nerdtree'
 " NERDCommenter
 Plug 'scrooloose/nerdcommenter'
 
-"TagbarToggle
-Plug 'https://github.com/majutsushi/tagbar.git'
+" NERDTabs
+Plug 'https://github.com/jistr/vim-nerdtree-tabs.git'
 
 " Tabular
 Plug 'https://github.com/godlygeek/tabular.git'
@@ -106,7 +106,7 @@ endif
 " -- useing ctrl+[shift]+(x/c/v) -- "
 vmap <C-S-x> "+x
 vmap <C-S-c> "+y
-imap <C-S-v> <Esc> "+gp
+imap <C-S-v> <Esc> "+gP
 
 " -- leader anc localleader -- "
 "let mapleader = ','
@@ -128,12 +128,21 @@ nmap <F3> :Autoformat<CR>
 nmap <F4> :set expandtab!<CR>
 " switch NERDTree
 nmap <F8> :NERDTreeToggle<CR>
-" switch TagbarToggle
-nmap <F9> :TagbarToggle<CR>
+
+
+" -- NerdTree -- "
+" window traversal
+map <C-J> <C-W>j<C-W>_
+map <C-K> <C-W>k<C-W>_
+map <C-L> <C-W>l<C-W>_
+map <C-H> <C-W>h<C-W>_
+
+" NerdTree-tab
+"let g:nerdtree_tabs_open_on_console_startup = 1
 
 
 " -- Indent Line -- "
-nmap <leader>ig :IndentGuidesToggle<cr>
+nmap <leader>ig :IndentGuidesToggle<CR>
 let g:indent_guides_auto_colors = 1
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
