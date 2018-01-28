@@ -1,20 +1,20 @@
 call plug#begin()
 
-" vim-colors-themes
-" -- vim-hybrid-theme
+" Colors themes
+" -- hybrid-theme
 Plug 'kristijanhusak/vim-hybrid-material'
-" -- vim tomarrow
+" -- tomarrow
 "  Manul install to vim/colors
 " color scheme git: https://github.com/chriskempson/vim-tomorrow-theme
 
-" vim-airline and themes
+" Airline and themes
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" vim-sensible
+" Sensible
 Plug 'tpope/vim-sensible'
 
-" vim-fugitive"
+" Fugitive"
 Plug 'https://github.com/tpope/vim-fugitive.git'
 
 " NERDTreeToggle
@@ -29,16 +29,16 @@ Plug 'https://github.com/jistr/vim-nerdtree-tabs.git'
 " Tabular
 Plug 'https://github.com/godlygeek/tabular.git'
 
-" vim-ctrlp
+" Ctrlp
 "Plug 'https://github.com/kien/ctrlp.vim.git'
 
 " FZF
 Plug 'junegunn/fzf'
 
-" vim-ack
+" Ack
 Plug 'mileszs/ack.vim'
 
-" vim-easymotion
+" Easymotion
 Plug 'https://github.com/easymotion/vim-easymotion.git'
 
 " Syntax tool
@@ -46,24 +46,25 @@ Plug 'scrooloose/syntastic'
 Plug 'rust-lang/rust.vim'
 Plug 'pangloss/vim-javascript'
 
-" formatter
+" Formatter
 Plug 'https://github.com/Chiel92/vim-autoformat.git'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
 
-" vim-Markdown
+" Markdown
 Plug 'https://github.com/plasticboy/vim-markdown.git'
-" vim-Markdown-Preview
+" Markdown-Preview
 Plug 'iamcco/markdown-preview.vim'
 
-" vim-easy-align
+
+" Easy Align
 Plug 'junegunn/vim-easy-align'
 
-" indentLine
+" Indent Line
 Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
 
-" Autocomplete plugin
+" Autocomplete
 Plug 'https://github.com/Shougo/neocomplete.vim.git'
 
 call plug#end()
@@ -138,7 +139,7 @@ map <C-L> <C-W>l<C-W>_
 map <C-H> <C-W>h<C-W>_
 
 " NerdTree-tab
-"let g:nerdtree_tabs_open_on_console_startup = 1
+let g:nerdtree_tabs_open_on_console_startup = 1
 
 
 " -- Indent Line -- "
