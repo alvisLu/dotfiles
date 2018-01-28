@@ -1,5 +1,7 @@
+"--------------------------------------------------------------------------------------"
+" Plugins
+"--------------------------------------------------------------------------------------"
 call plug#begin()
-
 " vim-colors-themes
 " -- vim-hybrid-theme
 Plug 'kristijanhusak/vim-hybrid-material'
@@ -49,8 +51,8 @@ Plug 'pangloss/vim-javascript'
 " formatter
 Plug 'https://github.com/Chiel92/vim-autoformat.git'
 Plug 'prettier/vim-prettier', {
-  \ 'do': 'npm install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
+	\ 'do': 'npm install',
+	\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
 
 " vim-Markdown
 Plug 'https://github.com/plasticboy/vim-markdown.git'
@@ -67,6 +69,7 @@ Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
 Plug 'https://github.com/Shougo/neocomplete.vim.git'
 
 call plug#end()
+
 
 "--------------------------------------------------------------------------------------"
 " Generally settings
@@ -100,7 +103,7 @@ set t_ut=
 colorscheme hybrid_material
 let g:enable_bold_font = 1
 if has ("gui_running")
-    let g:enable_italic_font = 1
+	let g:enable_italic_font = 1
 endif
 
 " -- useing ctrl+[shift]+(x/c/v) -- "
@@ -111,8 +114,6 @@ imap <C-S-v> <Esc> "+gP
 " -- leader anc localleader -- "
 "let mapleader = ','
 let maplocalleader='z'
-
-"--------------------------------------------------------------------------------------"
 
 
 
@@ -138,7 +139,7 @@ map <C-L> <C-W>l<C-W>_
 map <C-H> <C-W>h<C-W>_
 
 " NerdTree-tab
-"let g:nerdtree_tabs_open_on_console_startup = 1
+let g:nerdtree_tabs_open_on_console_startup = 1
 
 
 " -- Indent Line -- "
@@ -260,10 +261,39 @@ let g:neocomplete#sources#dictionary#dictionaries = {
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
+	let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] ='\h\w*'
 
 " <TAB> completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+
 "--------------------------------------------------------------------------------------"
+" Auto fcitx
+" 需安裝 vim-fcitx
+"--------------------------------------------------------------------------------------"
+let g:input_toggle = 1
+function! Fcitx2en()
+	let s:input_status = system("fcitx-remote")
+	if s:input_status == 2
+		let g:input_toggle = 1
+		let l:a = system("fcitx-remote -c")
+	endif
+endfunction
+
+function! Fcitx2zh()
+	let s:input_status = system("fcitx-remote")
+	if s:input_status != 2 && g:input_toggle == 1
+		let l:a = system("fcitx-remote -o")
+		let g:input_toggle = 0
+	endif
+endfunction
+
+set ttimeoutlen=150
+"退出插入模式
+autocmd InsertLeave * call Fcitx2en()
+"進入插入模式
+autocmd InsertEnter * call Fcitx2zh()
+"--------------------------------------------------------------------------------------"
+
