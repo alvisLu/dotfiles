@@ -4,7 +4,6 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
 PS1='[\u@\h \W]\$ '
 
 # some more ls aliases
@@ -17,12 +16,14 @@ alias mv='mv -iv'
 alias rm='rm -vrf'
 
 export PATH=$HOME/bin:$PATH
-#export TERM="screen-256color"
 
+# tmux
+export TERM="screen-256color"
 # nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
+source /usr/share/nvm/init-nvm.sh
 # FZF
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+source /usr/share/fzf/key-bindings.bash
+
+# my scripts
+source ~/git/linux-environ-config/scripts/fzf-git.sh
+source ~/git/linux-environ-config/scripts/git-aliases.sh
