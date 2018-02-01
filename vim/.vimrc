@@ -2,75 +2,79 @@
 " Plugins
 "--------------------------------------------------------------------------------------"
 call plug#begin()
-" vim-colors-themes
-" -- vim-hybrid-theme
-
-" Colors themes
-" -- hybrid-theme
+" -- Colors themes -- "
+" hybrid-theme
 Plug 'kristijanhusak/vim-hybrid-material'
-" -- tomarrow
-"  Manul install to vim/colors
+" tomarrow
+" Manul install to vim/colors
 " color scheme git: https://github.com/chriskempson/vim-tomorrow-theme
 
-" Airline and themes
+" -- Airline and themes -- "
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Sensible
+" -- Sensible -- "
 Plug 'tpope/vim-sensible'
 
-" Fugitive"
+" -- Fugitive" -- "
 Plug 'https://github.com/tpope/vim-fugitive.git'
 
-" NERDTreeToggle
+" -- NERDTreeToggle -- "
 Plug 'scrooloose/nerdtree'
 
-" NERDCommenter
+" -- NERDCommenter -- "
 Plug 'scrooloose/nerdcommenter'
 
-" NERDTabs
+" -- NERDTabs -- "
 Plug 'https://github.com/jistr/vim-nerdtree-tabs.git'
 
-" Tabular
+" -- Tabular -- "
 Plug 'https://github.com/godlygeek/tabular.git'
 
-" Ctrlp
-"Plug 'https://github.com/kien/ctrlp.vim.git'
-
-" FZF
+" -- FZF -- "
 Plug 'junegunn/fzf'
 
-" Ack
+" -- Ack -- "
 Plug 'mileszs/ack.vim'
 
-" Easymotion
+" -- Easymotion -- "
 Plug 'https://github.com/easymotion/vim-easymotion.git'
 
-" Syntax tool
+" -- Syntax tool -- "
 Plug 'scrooloose/syntastic'
 Plug 'rust-lang/rust.vim'
 Plug 'pangloss/vim-javascript'
 
-" Formatter
+" -- Formatter -- "
 Plug 'https://github.com/Chiel92/vim-autoformat.git'
 Plug 'prettier/vim-prettier', {
 	\ 'do': 'npm install',
 	\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
 
-" Markdown
+" -- Markdown -- "
+" Markdown Syntax
 Plug 'https://github.com/plasticboy/vim-markdown.git'
-" Markdown-Preview
+" Markdown Preview
 Plug 'iamcco/markdown-preview.vim'
 
-
-" Easy Align
+" -- Easy Align -- "
 Plug 'junegunn/vim-easy-align'
 
-" Indent Line
+" -- Indent Line -- "
 Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
 
-" Autocomplete
+" -- Autocomplete -- "
 Plug 'https://github.com/Shougo/neocomplete.vim.git'
+
+
+" -- Deoplete -- "
+if has('nvim')
+	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+	Plug 'Shougo/deoplete.nvim'
+	Plug 'roxma/nvim-yarp'
+	Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 call plug#end()
 
@@ -96,7 +100,6 @@ set cursorline              "顯示當前指標的行例
 " -- 顯示 tab, space -- "
 set list
 set listchars=tab:›\ ,trail:•,extends:»,precedes:«,nbsp:⎵
-
 " -- Colorscheme settings -- "
 set background=dark
 set t_Co=256
@@ -116,13 +119,12 @@ vmap <C-S-c> "+y
 imap <C-S-v> <Esc> "+gP
 
 " -- leader anc localleader -- "
-"let mapleader = ','
+let mapleader = ','
 let maplocalleader='z'
 
 
-
 "--------------------------------------------------------------------------------------"
-" Plugin
+" Mapping and Plugin set
 "--------------------------------------------------------------------------------------"
 " -- map F1~F12 function -- "
 " switch hlsearch
@@ -141,17 +143,18 @@ map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 map <C-L> <C-W>l<C-W>_
 map <C-H> <C-W>h<C-W>_
-
 " NerdTree-tab
 let g:nerdtree_tabs_open_on_console_startup = 1
 
 
 " -- Indent Line -- "
 nmap <leader>ig :IndentGuidesToggle<CR>
-let g:indent_guides_auto_colors = 1
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
+let g:indent_guides_auto_colors = 0
+hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEven ctermbg=darkgrey
 
 
 " -- Syntastic -- "
@@ -175,9 +178,8 @@ let g:airline_theme='tomorrow'
 " -- Buffer management --"
 set hidden
 nmap <C-n><C-n> :bnext<CR>
-nmap <C-n>n :bnext<CR>
-nmap <leader>] :bnext<CR>
-nmap <leader>[ :bprevious<CR>
+nmap <leader>r :bnext<CR>
+nmap <leader>e :bprevious<CR>
 nmap <leader>q :bp <BAR> bd #<CR>
 
 
@@ -185,30 +187,14 @@ nmap <leader>q :bp <BAR> bd #<CR>
 set diffopt+=vertical
 
 
-" -- Ctrl P --"
-"let g:ctrlp_custom_ignore = {
-"    \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
-"    \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
-"    \}
-"let g:ctrlp_working_path_mode = 'r'
-
-
 " -- FZF --"
-" Don't forget comment following line, if use CtrlP.
-nmap <C-p> :FZF<CR>
-
+nmap <C-t> :FZF<CR>
 nmap <leader>f :FZF<CR>
 let g:fzf_layout = { 'down': '~40%' }
-
-
-" Enable per-command history.
-" CTRL-N and CTRL-P will be automatically bound to next-history and
-" previous-history instead of down and up. If you don't like the change,
-" explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 
-" --  vim-prettier -- "
+" --  Vim Prettier -- "
 let g:prettier#config#print_width = 80
 let g:prettier#config#tab_width = 4
 let g:prettier#config#use_tabs = 'false'
@@ -225,7 +211,7 @@ cnoreabbrev Ack Ack!
 nmap <leader>a :Ack -i<Space>
 
 
-" -- vim-Markdown -- "
+" -- Vim Markdown -- "
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
 
@@ -233,7 +219,7 @@ let g:vim_markdown_toc_autofit = 1
 " -- Easy Motion -- "
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
-" hjkl motion and line mtion
+" use hjkl motion and line mtion
 map <Localleader>l <Plug>(easymotion-lineforward)
 map <Localleader>j <Plug>(easymotion-j)
 map <Localleader>k <Plug>(easymotion-k)
@@ -255,23 +241,25 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
-
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
 	\ 'default' : '',
 	\ 'vimshell' : $HOME.'/.vimshell_hist',
 	\ 'scheme' : $HOME.'/.gosh_completions'
 	\ }
-
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
 	let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] ='\h\w*'
-
 " <TAB> completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
+
+" -- Use deoplete -- "
+if has('nvim')
+	let g:deoplete#enable_at_startup = 1
+endif
 
 "--------------------------------------------------------------------------------------"
 " Auto fcitx
