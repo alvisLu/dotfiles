@@ -8,7 +8,7 @@ is_in_git_repo() {
 }
 
 fzf-down() {
-  fzf --height 90% "$@" --border
+  fzf --height 100% "$@" --border
 }
 
 gf() {
@@ -37,7 +37,16 @@ gt() {
 
 gh() {
   is_in_git_repo || return
-  git log --date=short --format="%C(green)%C(bold)%cd %C(auto)%h%d %s (%an)" --graph --color=always |
+  git log --date=short --format="%C(blue)%cd %C(auto)%h%d %s %C(cyan)[%an] %C(auto)" --graph --color=always |
+  fzf-down --ansi --no-sort --reverse --multi --bind 'ctrl-s:toggle-sort' \
+    --header 'Press CTRL-S to toggle sort' \
+    --preview 'grep -o "[a-f0-9]\{7,\}" <<< {} | xargs git show --color=always | head -'$LINES |
+  grep -o "[a-f0-9]\{7,\}"
+}
+
+gj() {
+  is_in_git_repo || return
+  git log --date=short --format="%s %C(cyan)[%an] %C(black)%h%d %C(auto) " --graph --color=always |
   fzf-down --ansi --no-sort --reverse --multi --bind 'ctrl-s:toggle-sort' \
     --header 'Press CTRL-S to toggle sort' \
     --preview 'grep -o "[a-f0-9]\{7,\}" <<< {} | xargs git show --color=always | head -'$LINES |
@@ -54,8 +63,9 @@ gr() {
 
 # key-binding
 bind '"\er": redraw-current-line'
-bind '"\C-g\C-f": "$(gf)\e\C-e\er"'
-bind '"\C-g\C-b": "$(gb)\e\C-e\er"'
-bind '"\C-g\C-t": "$(gt)\e\C-e\er"'
-bind '"\C-g\C-h": "$(gh)\e\C-e\er"'
-bind '"\C-g\C-r": "$(gr)\e\C-e\er"'
+bind '"\C-f\C-f": "$(gf)\e\C-e\er"'
+bind '"\C-f\C-b": "$(gb)\e\C-e\er"'
+bind '"\C-f\C-t": "$(gt)\e\C-e\er"'
+bind '"\C-f\C-h": "$(gh)\e\C-e\er"'
+bind '"\C-f\C-j": "$(gj)\e\C-e\er"'
+bind '"\C-f\C-r": "$(gr)\e\C-e\er"'
