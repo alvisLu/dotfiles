@@ -15,8 +15,7 @@ gf() {
   is_in_git_repo || return
   git -c color.status=always status --short |
   fzf-down -m --ansi --nth 2..,.. \
-    --preview '(git diff --color=always -- {-1} | sed 1,4d; cat {-1}) | head -500' |
-  cut -c4- | sed 's/.* -> //'
+    --preview '(git diff --color=always -- {-1} | sed 1,4d; cat {-1}) | head -500' | cut -c4- | sed 's/.* -> //'
 }
 
 gb() {
@@ -28,29 +27,13 @@ gb() {
   sed 's#^remotes/##'
 }
 
-gt() {
-  is_in_git_repo || return
-  git tag --sort -version:refname |
-  fzf-down --multi --preview-window right:70% \
-    --preview 'git show --color=always {} | head -'$LINES
-}
-
 gh() {
   is_in_git_repo || return
-  git log --date=short --format="%C(blue)%cd %C(auto)%h%d %s %C(cyan)[%an] %C(auto)" --graph --color=always |
+  git log --date=short --format="%C(blue)%C(bold)%C(dim)%cd %C(auto)%h%d %s %C(cyan)" --graph --color=always |
   fzf-down --ansi --no-sort --reverse --multi --bind 'ctrl-s:toggle-sort' \
     --header 'Press CTRL-S to toggle sort' \
-    --preview 'grep -o "[a-f0-9]\{7,\}" <<< {} | xargs git show --color=always | head -'$LINES |
-  grep -o "[a-f0-9]\{7,\}"
-}
-
-gj() {
-  is_in_git_repo || return
-  git log --date=short --format="%s %C(cyan)[%an] %C(black)%h%d %C(auto) " --graph --color=always |
-  fzf-down --ansi --no-sort --reverse --multi --bind 'ctrl-s:toggle-sort' \
-    --header 'Press CTRL-S to toggle sort' \
-    --preview 'grep -o "[a-f0-9]\{7,\}" <<< {} | xargs git show --color=always | head -'$LINES |
-  grep -o "[a-f0-9]\{7,\}"
+    --preview "echo {} | grep -o '[a-f0-9]\{7,\}' | head -1 | xargs -I % sh -c 'git show --color=always % | diff-so-fancy | head -5000'" | # fixbug: 使用參數 $LINES 行數顯示最多 50 行
+    grep -o "[a-f0-9]\{7,\}"
 }
 
 gr() {
@@ -65,7 +48,5 @@ gr() {
 bind '"\er": redraw-current-line'
 bind '"\C-f\C-f": "$(gf)\e\C-e\er"'
 bind '"\C-f\C-b": "$(gb)\e\C-e\er"'
-bind '"\C-f\C-t": "$(gt)\e\C-e\er"'
 bind '"\C-f\C-h": "$(gh)\e\C-e\er"'
-bind '"\C-f\C-j": "$(gj)\e\C-e\er"'
 bind '"\C-f\C-r": "$(gr)\e\C-e\er"'
