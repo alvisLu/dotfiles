@@ -23,7 +23,5 @@ export TERM="screen-256color"
 source /usr/share/nvm/init-nvm.sh
 # FZF
 source /usr/share/fzf/key-bindings.bash
-
-# my scripts
-source ~/git/linux-environ-config/scripts/fzf-git.sh
-source ~/git/linux-environ-config/scripts/git-aliases.sh
+# fzf-git
+source $HOME/git/linux-environ-config/scripts/fzf-git.sh
