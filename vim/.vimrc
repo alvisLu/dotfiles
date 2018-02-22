@@ -63,9 +63,11 @@ Plug 'junegunn/vim-easy-align'
 " -- Indent Line -- "
 Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
 
+" -- Auto Pairs -- "
+Plug 'https://github.com/jiangmiao/auto-pairs.git'
+
 " -- Autocomplete -- "
 Plug 'https://github.com/Shougo/neocomplete.vim.git'
-
 
 " -- Deoplete -- "
 if has('nvim')
@@ -178,8 +180,8 @@ let g:airline_theme='tomorrow'
 " -- Buffer management --"
 set hidden
 nmap <C-n><C-n> :bnext<CR>
-nmap <leader>r :bnext<CR>
-nmap <leader>e :bprevious<CR>
+nmap <leader>n :bnext<CR>
+nmap <leader>p :bprevious<CR>
 nmap <leader>q :bp <BAR> bd #<CR>
 
 
