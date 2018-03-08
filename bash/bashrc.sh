@@ -23,5 +23,9 @@ export TERM="screen-256color"
 source /usr/share/nvm/init-nvm.sh
 # FZF
 source /usr/share/fzf/key-bindings.bash
-# fzf-git
+
+# my scripts
 source $HOME/git/linux-environ-config/scripts/fzf-git.sh
+source $HOME/git/linux-environ-config/scripts/git-completion.bash
+
+export PATH=$PATH:/root/.gem/ruby/2.5.0/bin
