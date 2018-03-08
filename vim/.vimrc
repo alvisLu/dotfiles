@@ -190,7 +190,6 @@ set diffopt+=vertical
 
 
 " -- FZF --"
-nmap <C-t> :FZF<CR>
 nmap <leader>f :FZF<CR>
 let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_history_dir = '~/.local/share/fzf-history'
@@ -216,6 +215,13 @@ nmap <leader>a :Ack -i<Space>
 " -- Vim Markdown -- "
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
+" Tabularize
+nmap <leader>t :Tabularize<CR>
+vmap <leader>t :Tabularize<CR>
+nmap <leader>t= :Tabularize /=<CR>
+vmap <leader>t= :Tabularize /=<CR>
+nmap <leader>t: :Tabularize /:\zs<CR>
+vmap <leader>t: :Tabularize /:\zs<CR>
 
 
 " -- Easy Motion -- "
@@ -245,10 +251,10 @@ let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
-	\ 'default' : '',
-	\ 'vimshell' : $HOME.'/.vimshell_hist',
-	\ 'scheme' : $HOME.'/.gosh_completions'
-	\ }
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+    \ }
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
 	let g:neocomplete#keyword_patterns = {}
@@ -269,19 +275,19 @@ endif
 "--------------------------------------------------------------------------------------"
 let g:input_toggle = 1
 function! Fcitx2en()
-	let s:input_status = system("fcitx-remote")
-	if s:input_status == 2
-		let g:input_toggle = 1
-		let l:a = system("fcitx-remote -c")
-	endif
+    let s:input_status = system("fcitx-remote")
+    if s:input_status == 2
+        let g:input_toggle = 1
+        let l:a = system("fcitx-remote -c")
+    endif
 endfunction
 
 function! Fcitx2zh()
-	let s:input_status = system("fcitx-remote")
-	if s:input_status != 2 && g:input_toggle == 1
-		let l:a = system("fcitx-remote -o")
-		let g:input_toggle = 0
-	endif
+    let s:input_status = system("fcitx-remote")
+    if s:input_status != 2 && g:input_toggle == 1
+        let l:a = system("fcitx-remote -o")
+        let g:input_toggle = 0
+    endif
 endfunction
 
 set ttimeoutlen=150
