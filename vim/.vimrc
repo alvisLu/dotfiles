@@ -174,14 +174,12 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 " theme
 let g:airline_theme='tomorrow'
-"let g:airline_theme = 'hybrid'
 
 
 " -- Buffer management --"
 set hidden
-nmap <C-n><C-n> :bnext<CR>
-nmap <leader>n :bnext<CR>
-nmap <leader>p :bprevious<CR>
+nmap <leader>m :bprevious<CR>
+nmap <leader>. :bnext<CR>
 nmap <leader>q :bp <BAR> bd #<CR>
 
 
@@ -208,8 +206,11 @@ let g:prettier#config#parser = 'babylon'
 
 
 " -- Ack -- "
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
 cnoreabbrev Ack Ack!
-nmap <leader>a :Ack -i<Space>
+nmap <leader>a :Ack<Space>
 
 
 " -- Vim Markdown -- "
