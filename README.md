@@ -8,7 +8,7 @@ My Linux System Environment Configuration.
 1. Seach tool:
     * [ack!](https://beyondgrep.com/install/)
     * [FZF](https://github.com/junegunn/fzf/blob/master/README-VIM.md)
-
+1. Fonts: [nerd-fonts](https://github.com/ryanoasis/nerd-fonts#option-7-unofficial-arch-user-repository-aur)
 
 ### tmux
 1. Plugin Manager: [tpm](https://github.com/tmux-plugins/tpm)

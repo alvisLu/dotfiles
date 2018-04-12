@@ -28,6 +28,12 @@ Plug 'scrooloose/nerdcommenter'
 " -- NERDTabs -- "
 Plug 'https://github.com/jistr/vim-nerdtree-tabs.git'
 
+" -- NERDTree Syntax highlight -- "
+" 使用 NerdTree syntax highlight 時需安裝 vim-devicons 與 nerd-font
+Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight.git'
+" -- Vim Dev Iocns -- "
+Plug 'https://github.com/ryanoasis/vim-devicons.git'
+
 " -- Tabular -- "
 Plug 'https://github.com/godlygeek/tabular.git'
 
@@ -147,6 +153,13 @@ map <C-L> <C-W>l<C-W>_
 map <C-H> <C-W>h<C-W>_
 " NerdTree-tab
 let g:nerdtree_tabs_open_on_console_startup = 1
+" NerdTree syntax highlighting
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+" Enables folder icon and folder name highlighting
+let g:NERDTreeHighlightFolders = 1
+let g:NERDTreeHighlightFoldersFullName = 1
 
 
 " -- Indent Line -- "
@@ -178,7 +191,7 @@ let g:airline_theme='tomorrow'
 
 " -- Buffer management --"
 set hidden
-nmap <leader>m :bprevious<CR>
+nmap <leader>n :bprevious<CR>
 nmap <leader>. :bnext<CR>
 nmap <leader>q :bp <BAR> bd #<CR>
 
