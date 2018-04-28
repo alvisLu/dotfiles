@@ -54,8 +54,8 @@ Plug 'pangloss/vim-javascript'
 " -- Formatter -- "
 Plug 'https://github.com/Chiel92/vim-autoformat.git'
 Plug 'prettier/vim-prettier', {
-	\ 'do': 'npm install',
-	\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
+            \ 'do': 'npm install',
+            \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
 
 " -- Markdown -- "
 " Markdown Syntax
@@ -77,18 +77,18 @@ Plug 'https://github.com/Shougo/neocomplete.vim.git'
 
 " -- Deoplete -- "
 if has('nvim')
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
-	Plug 'Shougo/deoplete.nvim'
-	Plug 'roxma/nvim-yarp'
-	Plug 'roxma/vim-hug-neovim-rpc'
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
 call plug#end()
 
 
 "--------------------------------------------------------------------------------------"
-" Generally settings
+" Generally setting
 "--------------------------------------------------------------------------------------"
 set hlsearch                "高亮度反白
 set autoindent              "自動縮排
@@ -100,25 +100,25 @@ set shiftwidth=4            "使用 4 個 spaces 來縮排
 set expandtab               "按下 tab 時，使用 4 個 spaces
 set smartindent             "Autotabs for certain code
 set ignorecase              "忽略大小寫
-set mouse=a                 "在Terminal 可以使用滑鼠
-set guifont=monospace\ 13   "font: monospace/monaco, size: 13
-set fileencodings=utf8,big5 "讓檔案可以使用 utf8 或是 big5 編碼來開啟
-set cursorline              "顯示當前指標的行例
+set mouse=a                 "可以使用滑鼠
+set guifont=monaco\ 13      "font: monospace or monaco, size: 13
+set fileencodings=utf8,big5 "可以使用 utf8 或是 big5 編碼
+set cursorline              "顯示當前指標的行列
+
 
 " -- 顯示 tab, space -- "
 set list
 set listchars=tab:›\ ,trail:•,extends:»,precedes:«,nbsp:⎵
-" -- Colorscheme settings -- "
+" -- Colorscheme setting -- "
 set background=dark
 set t_Co=256
 set t_ut=
 
-"colorscheme Tomorrow-Night
-"colorscheme hybrid_reverse
-colorscheme hybrid_material
+colorscheme hybrid_reverse
+"colorscheme hybrid_material
 let g:enable_bold_font = 1
 if has ("gui_running")
-	let g:enable_italic_font = 1
+    let g:enable_italic_font = 1
 endif
 
 " -- useing ctrl+[shift]+(x/c/v) -- "
@@ -132,7 +132,7 @@ let maplocalleader='z'
 
 
 "--------------------------------------------------------------------------------------"
-" Mapping and Plugin set
+" Mapping and Setting
 "--------------------------------------------------------------------------------------"
 " -- map F1~F12 function -- "
 " switch hlsearch
@@ -152,6 +152,9 @@ map <C-K> <C-W>k<C-W>_
 map <C-L> <C-W>l<C-W>_
 map <C-H> <C-W>h<C-W>_
 " NerdTree-tab
+let NERDTreeChDirMode=0
+let NERDTreeQuitOnOpen=0
+let NERDTreeKeepTreeInNewTab=1
 let g:nerdtree_tabs_open_on_console_startup = 1
 " NerdTree syntax highlighting
 let g:NERDTreeFileExtensionHighlightFullName = 1
@@ -163,11 +166,9 @@ let g:NERDTreeHighlightFoldersFullName = 1
 
 
 " -- Indent Line -- "
-nmap <leader>ig :IndentGuidesToggle<CR>
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
-let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
 
@@ -202,8 +203,8 @@ set diffopt+=vertical
 
 " -- FZF --"
 nmap <leader>f :FZF<CR>
-let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_history_dir = '~/.local/share/fzf-history'
+let g:fzf_layout = { 'down': '~30%' }
 
 
 " --  Vim Prettier -- "
@@ -265,13 +266,13 @@ let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-    \ }
+            \ 'default' : '',
+            \ 'vimshell' : $HOME.'/.vimshell_hist',
+            \ 'scheme' : $HOME.'/.gosh_completions'
+            \ }
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
-	let g:neocomplete#keyword_patterns = {}
+    let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] ='\h\w*'
 " <TAB> completion.
@@ -280,7 +281,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " -- Use deoplete -- "
 if has('nvim')
-	let g:deoplete#enable_at_startup = 1
+    let g:deoplete#enable_at_startup = 1
 endif
 
 "--------------------------------------------------------------------------------------"
