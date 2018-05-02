@@ -103,7 +103,9 @@ set ignorecase              "忽略大小寫
 set mouse=a                 "可以使用滑鼠
 set guifont=monaco\ 13      "font: monospace or monaco, size: 13
 set fileencodings=utf8,big5 "可以使用 utf8 或是 big5 編碼
-set cursorline              "顯示當前指標的行列
+set cursorline              "顯示當前游標的行列
+" 游標設定
+set guicursor+=n-v-c:hor50ncv-cursor-blinkwait300-blinkon90-blinkoff90
 
 
 " -- 顯示 tab, space -- "
