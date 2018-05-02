@@ -4,7 +4,18 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-PS1='[\u@\h \W]\$ '
+
+# Prompt
+#PS1='[\u@\h \W]\$ '
+GREEN="\[$(tput setaf 2)\]"
+YELLOW="\[$(tput setaf 3)\]"
+PURPLE="\[$(tput setaf 5)\]"
+WHITE="\[$(tput setaf 7)\]"
+
+BOLD="\[$(tput bold)\]"
+RESET="\[$(tput sgr0)\]"
+
+PS1="${BOLD}${PURPLE}\W${YELLOW}ϟ${WHITE}: ${GREEN}>${RESET} "
 
 # some more ls aliases
 alias grep='grep --color=auto'
@@ -16,8 +27,8 @@ alias mv='mv -iv'
 alias rm='rm -rf'
 
 export PATH=$HOME/bin:$PATH
-export TERM="screen-256color"
-export EDITOR="nvim"
+export TERM='screen-256color'
+export EDITOR='nvim'
 # gem
 export PATH=$PATH:/root/.gem/ruby/2.5.0/bin
 
