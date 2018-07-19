@@ -17,14 +17,15 @@ RESET="\[$(tput sgr0)\]"
 
 PS1="${BOLD}${PURPLE}\W${YELLOW}ϟ${WHITE}: ${GREEN}>${RESET} "
 
-# some more ls aliases
+# some more aliases
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
 alias ll='ls -lXr'
 alias la='ls -laXr'
 alias cp='cp -iv'
 alias mv='mv -iv'
-alias rm='rm -rf'
+alias rm='rm -i'
+
 
 export PATH=$HOME/bin:$PATH
 export TERM='screen-256color'
@@ -40,4 +41,3 @@ source /usr/share/fzf/key-bindings.bash
 # my scripts
 source $HOME/git/linux-environ-config/scripts/fzf-git.sh
 source $HOME/git/linux-environ-config/scripts/git-completion.bash
-
