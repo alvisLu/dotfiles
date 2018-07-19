@@ -32,7 +32,7 @@ Plug 'https://github.com/jistr/vim-nerdtree-tabs.git'
 " 使用 NerdTree syntax highlight 時需安裝 vim-devicons 與 nerd-font
 Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight.git'
 " -- Vim Dev Iocns -- "
-Plug 'https://github.com/ryanoasis/vim-devicons.git'
+"Plug 'https://github.com/ryanoasis/vim-devicons.git'
 
 " -- Tabular -- "
 Plug 'https://github.com/godlygeek/tabular.git'
@@ -104,8 +104,6 @@ set mouse=a                 "可以使用滑鼠
 set guifont=monaco\ 13      "font: monospace or monaco, size: 13
 set fileencodings=utf8,big5 "可以使用 utf8 或是 big5 編碼
 set cursorline              "顯示當前游標的行列
-" 游標設定
-set guicursor+=n-v-c:hor50ncv-cursor-blinkwait300-blinkon90-blinkoff90
 
 
 " -- 顯示 tab, space -- "
@@ -132,6 +130,8 @@ imap <C-S-v> <Esc> "+gP
 let mapleader = ','
 let maplocalleader='z'
 
+" -- Highlight -- "
+let &colorcolumn=81
 
 "--------------------------------------------------------------------------------------"
 " Mapping and Setting
@@ -194,7 +194,7 @@ let g:airline_theme='tomorrow'
 
 " -- Buffer management --"
 set hidden
-nmap <leader>n :bprevious<CR>
+nmap <leader>m :bprevious<CR>
 nmap <leader>. :bnext<CR>
 nmap <leader>q :bp <BAR> bd #<CR>
 
@@ -233,12 +233,16 @@ nmap <leader>a :Ack<Space>
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
 " Tabularize
-nmap <leader>t :Tabularize<CR>
-vmap <leader>t :Tabularize<CR>
 nmap <leader>t= :Tabularize /=<CR>
 vmap <leader>t= :Tabularize /=<CR>
-nmap <leader>t: :Tabularize /:\zs<CR>
-vmap <leader>t: :Tabularize /:\zs<CR>
+nmap <leader>t; :Tabularize /:<CR>
+vmap <leader>t; :Tabularize /:<CR>
+nmap <leader>t;; :Tabularize /:\zs<CR>
+vmap <leader>t;; :Tabularize /:\zs<CR>
+nmap <leader>t, :Tabularize /,<CR>
+vmap <leader>t, :Tabularize /,<CR>
+nmap <leader>t :TableFormat<CR>
+vmap <leader>t :TableFormat<CR>
 
 
 " -- Easy Motion -- "
@@ -313,4 +317,3 @@ autocmd InsertLeave * call Fcitx2en()
 "進入插入模式
 autocmd InsertEnter * call Fcitx2zh()
 "--------------------------------------------------------------------------------------"
-
