@@ -7,8 +7,16 @@ My Linux System Environment Configuration.
 1. Plugin Manager: [Vim-plugin](https://github.com/junegunn/vim-plug)
 1. Seach tool:
     * [ack!](https://beyondgrep.com/install/)
+        Install package: `adk`
     * [FZF](https://github.com/junegunn/fzf/blob/master/README-VIM.md)
-1. Fonts: [nerd-fonts](https://github.com/ryanoasis/nerd-fonts#option-7-unofficial-arch-user-repository-aur)
+        Install package: `fzf`
+1. [NERDTree Syntax highlight](https://github.com/tiagofumo/vim-nerdtree-syntax-highlight)
+    使用 NerdTree syntax highlight 時需安裝 [vim-devicons](https://github.com/ryanoasis/vim-devicons.git) (vim-plugin) 與 [nerd-fonts](https://github.com/ryanoasis/nerd-fonts#option-7-unofficial-arch-user-repository-aur)
+    Install package: `nerd-fonts-source-code-pro`
+
+1. [rustfmt](https://github.com/rust-lang/rust.vim):
+    Install: `cargo install rustfmt` and `rustup component add rustfmt-preview`
+
 
 ### tmux
 1. Plugin Manager: [tpm](https://github.com/tmux-plugins/tpm)
