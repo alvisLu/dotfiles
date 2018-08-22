@@ -1,13 +1,12 @@
-"--------------------------------------------------------------------------------------"
+"------------------------------------------------------------------------------"
 " Plugins
-"--------------------------------------------------------------------------------------"
+"------------------------------------------------------------------------------"
 call plug#begin()
 " -- Colors themes -- "
 " hybrid-theme
 Plug 'kristijanhusak/vim-hybrid-material'
-" tomarrow
-" Manul install to vim/colors
-" color scheme git: https://github.com/chriskempson/vim-tomorrow-theme
+" tomorrow
+Plug 'https://github.com/chriskempson/vim-tomorrow-theme'
 
 " -- Airline and themes -- "
 Plug 'vim-airline/vim-airline'
@@ -87,9 +86,9 @@ endif
 call plug#end()
 
 
-"--------------------------------------------------------------------------------------"
+"------------------------------------------------------------------------------"
 " Generally setting
-"--------------------------------------------------------------------------------------"
+"------------------------------------------------------------------------------"
 set hlsearch                "高亮度反白
 set autoindent              "自動縮排
 set nu                      "顯示行號
@@ -115,7 +114,6 @@ set t_Co=256
 set t_ut=
 
 colorscheme hybrid_reverse
-"colorscheme hybrid_material
 let g:enable_bold_font = 1
 if has ("gui_running")
     let g:enable_italic_font = 1
@@ -133,9 +131,9 @@ let maplocalleader='z'
 " -- Highlight -- "
 let &colorcolumn=81
 
-"--------------------------------------------------------------------------------------"
+"------------------------------------------------------------------------------"
 " Mapping and Setting
-"--------------------------------------------------------------------------------------"
+"------------------------------------------------------------------------------"
 " -- map F1~F12 function -- "
 " switch hlsearch
 nmap <F2> :set hlsearch!<CR>
@@ -157,7 +155,7 @@ map <C-H> <C-W>h<C-W>_
 let NERDTreeChDirMode=0
 let NERDTreeQuitOnOpen=0
 let NERDTreeKeepTreeInNewTab=1
-let g:nerdtree_tabs_open_on_console_startup = 1
+let g:nerdtree_tabs_open_on_console_startup = 0
 " NerdTree syntax highlighting
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
@@ -183,6 +181,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['standard']
+let g:syntastic_javascript_standard_generic = 1
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint'
 
 
 " -- vim-airline -- "
@@ -210,14 +212,16 @@ let g:fzf_layout = { 'down': '~30%' }
 
 
 " --  Vim Prettier -- "
+let g:prettier#autoformat = 0
 let g:prettier#config#print_width = 80
-let g:prettier#config#tab_width = 4
+let g:prettier#config#tab_width = 2
 let g:prettier#config#use_tabs = 'false'
 let g:prettier#config#semi = 'true'
-let g:prettier#config#single_quote = 'false'
+let g:prettier#config#single_quote = 'true'
 let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#jsx_bracket_same_line = 'true'
-let g:prettier#config#trailing_comma = 'none'
+let g:prettier#config#jsx_bracket_same_line = 'false'
+let g:prettier#config#trailing_comma = 'all'
+let g:prettier#config#arrow_parens = 'always'
 let g:prettier#config#parser = 'babylon'
 
 
@@ -290,10 +294,10 @@ if has('nvim')
     let g:deoplete#enable_at_startup = 1
 endif
 
-"--------------------------------------------------------------------------------------"
+"------------------------------------------------------------------------------"
 " Auto fcitx
 " 需安裝 vim-fcitx
-"--------------------------------------------------------------------------------------"
+"------------------------------------------------------------------------------"
 let g:input_toggle = 1
 function! Fcitx2en()
     let s:input_status = system("fcitx-remote")
@@ -316,4 +320,6 @@ set ttimeoutlen=150
 autocmd InsertLeave * call Fcitx2en()
 "進入插入模式
 autocmd InsertEnter * call Fcitx2zh()
-"--------------------------------------------------------------------------------------"
+"------------------------------------------------------------------------------"
+
+
