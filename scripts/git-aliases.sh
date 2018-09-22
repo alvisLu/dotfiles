@@ -16,7 +16,7 @@ git config --global alias.difflast "diff --cached HEAD^"
 #'&& git diff --color "$@" | diff-so-fancy  | less --tabs=4 -RFX; }; f'
 
 git config --global alias.tree2 "log --graph --abbrev-commit --decorate --pretty=oneline"
-git config --global alias.tree  "log --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h %C(white)%s%C(dim white) (%an) %C(bold red)%d%n''            %C(cyan)%ad' --date=format:%Y-%m-%d\ %a\ %H:%M --all"
+git config --global alias.tree  "log --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h %C(white)%s%C(dim white) (%an) %C(bold red)%d%n''            %C(cyan)%ad' --date=format:%Y-%m-%d\ %a\ %H:%M"
 
 # 中文顯示
 git config --global core.quotepath false
