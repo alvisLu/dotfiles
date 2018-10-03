@@ -5,7 +5,7 @@ My Linux System Environment Configuration.
 ## Pre-Install
 ### vim
 1. Plugin Manager: [Vim-plugin](https://github.com/junegunn/vim-plug)
-1. Seach tool:
+1. Searching tool:
     * [ack!](https://beyondgrep.com/install/)
         Install package: `adk`
     * [FZF](https://github.com/junegunn/fzf/blob/master/README-VIM.md)
