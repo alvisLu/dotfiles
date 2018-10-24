@@ -29,7 +29,7 @@ gb() {
 
 gh() {
   is_in_git_repo || return
-  git log --date=short --format="%C(blue)%C(bold)%C(dim)%cd %C(auto)%h%d %s %C(cyan)" --graph --color=always |
+  git log --date=short --format="%C(bold dim blue)%cd %C(auto)%h %s%d %C(cyan)" --graph --color=always |
   fzf-down --ansi --no-sort --reverse --multi --bind 'ctrl-s:toggle-sort' \
     --header 'Press CTRL-S to toggle sort' \
     --preview "echo {} | grep -o '[a-f0-9]\{7,\}' | head -1 | xargs -I % sh -c 'git show --color=always % | diff-so-fancy | head -5000'" | # fixbug: 使用參數 $LINES 行數顯示最多 50 行

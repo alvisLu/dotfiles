@@ -18,8 +18,8 @@ git config --global alias.difflast "diff --cached HEAD^"
 git config --global alias.tree2 "log --graph --abbrev-commit --decorate "\
 "--pretty=oneline"
 
-git config --global alias.tree  "log --graph --abbrev-commit --decorate "\
-"--format=format:'%C(bold yellow)%h %Creset%C(cyan)%ad %C(white)%s"\
+git config --global alias.tree "log --graph --abbrev-commit --decorate "\
+"--format=format:'%C(bold yellow)%h %C(dim cyan)%cd %Creset%C(white)%s"\
 "%C(dim white) (%an) %C(auto)%d' --date=format:%Y-%m-%d"
 
 
