@@ -38,6 +38,13 @@ source /usr/share/nvm/init-nvm.sh
 # FZF
 source /usr/share/fzf/key-bindings.bash
 
+
 # my scripts
 source $HOME/git/linux-environ-config/scripts/fzf-git.sh
 source $HOME/git/linux-environ-config/scripts/git-completion.bash
+
+# other scripts
+source $HOME/scripts/mapacode.bash
+
+
+

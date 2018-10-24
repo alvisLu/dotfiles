@@ -5,6 +5,10 @@ My Linux System Environment Configuration.
 
 ## 參考
 
+### Thinkpad13
+
+* 30-touchpad.conf: Touchpad 設定 (path: /etc/X11/xorg.conf.d/30-touchpad.conf)
+
 ### vim
 
 1. Plugin Manager: [Vim-plugin](https://github.com/junegunn/vim-plug)
@@ -40,7 +44,7 @@ My Linux System Environment Configuration.
 
     Install to `/usr/share/xfce4/terminal/colorschemes`
 
-### script
+### scripts
 
 1. fzf-git.sh: [discription](https://junegunn.kr/2016/07/fzf-git/), [code](https://gist.github.com/junegunn/8b572b8d4b5eddd8b85e5f4d40f17236)
     
