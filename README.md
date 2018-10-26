@@ -5,14 +5,10 @@ My Linux System Environment Configuration.
 
 ## 參考
 
-### Thinkpad13
-
-* 30-touchpad.conf: Touchpad 設定 (path: /etc/X11/xorg.conf.d/30-touchpad.conf)
-
-### vim
+### nvim
 
 1. Plugin Manager: [Vim-plugin](https://github.com/junegunn/vim-plug)
-1. Searching tool:
+1. Searching Tool:
     * [ack!](https://beyondgrep.com/install/)
     * [FZF](https://github.com/junegunn/fzf/blob/master/README-VIM.md)
 1. 目錄圖示與語法套件: [NERDTree Syntax highlight](https://github.com/tiagofumo/vim-nerdtree-syntax-highlight):
@@ -49,3 +45,10 @@ My Linux System Environment Configuration.
 1. fzf-git.sh: [discription](https://junegunn.kr/2016/07/fzf-git/), [code](https://gist.github.com/junegunn/8b572b8d4b5eddd8b85e5f4d40f17236)
     
     更多的參考: [junegunn.kr](https://junegunn.kr/)
+
+### ThinkPad13
+
+* /etc/X11/xorg.conf.d/30-touchpad.conf: Touchpad 配置
+* ~/.Xmodmap: 修改 `CapsLock` => `Ctrl`, `Shift + CapsLock` => `CapsLock`
+
+
