@@ -200,7 +200,7 @@ set hidden
 nmap <leader>m :bprevious<CR>
 nmap <leader>. :bnext<CR>
 nmap <leader>q :bp <BAR> bd #<CR>
-
+nmap <leader>b :ls<CR>:b<Space>
 
 " -- Fugitive --"
 set diffopt+=vertical
@@ -305,7 +305,7 @@ function! Fcitx2en()
     if s:input_status == 2
         let g:input_toggle = 1
         let l:a = system("fcitx-remote -c")
-    endif
+    endilf
 endfunction
 
 function! Fcitx2zh()
