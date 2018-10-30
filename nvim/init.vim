@@ -71,9 +71,6 @@ Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
 " -- Auto Pairs -- "
 Plug 'https://github.com/jiangmiao/auto-pairs.git'
 
-" -- Autocomplete -- "
-Plug 'https://github.com/Shougo/neocomplete.vim.git'
-
 " -- Deoplete -- "
 if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -266,30 +263,6 @@ nmap s <Plug>(easymotion-overwin-f2)
 map / <Plug>(easymotion-sn)
 
 
-" -- Auto complete -- "
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-" Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-            \ 'default' : '',
-            \ 'vimshell' : $HOME.'/.vimshell_hist',
-            \ 'scheme' : $HOME.'/.gosh_completions'
-            \ }
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] ='\h\w*'
-" <TAB> completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
-
 " -- Use deoplete -- "
 if has('nvim')
     let g:deoplete#enable_at_startup = 1
@@ -305,7 +278,7 @@ function! Fcitx2en()
     if s:input_status == 2
         let g:input_toggle = 1
         let l:a = system("fcitx-remote -c")
-    endilf
+    endif
 endfunction
 
 function! Fcitx2zh()
