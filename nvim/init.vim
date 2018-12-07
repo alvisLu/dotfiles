@@ -145,10 +145,10 @@ nmap <F8> :NERDTreeToggle<CR>
 
 " -- NerdTree -- "
 " window traversal
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
-map <C-L> <C-W>l<C-W>_
-map <C-H> <C-W>h<C-W>_
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-L> <C-W>l
+map <C-H> <C-W>h
 " NerdTree-tab
 let NERDTreeChDirMode=0
 let NERDTreeQuitOnOpen=0
