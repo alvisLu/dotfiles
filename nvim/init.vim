@@ -41,6 +41,7 @@ Plug 'junegunn/fzf'
 
 " -- Ack -- "
 Plug 'mileszs/ack.vim'
+" 可安裝 [Silver Searcher](https://github.com/ggreer/the_silver_searcher) 使用 AG
 
 " -- Easymotion -- "
 Plug 'https://github.com/easymotion/vim-easymotion.git'
@@ -229,6 +230,8 @@ if executable('ag')
 endif
 cnoreabbrev Ack Ack!
 nmap <leader>a :Ack<Space>
+" 指定收尋 eiffel 檔
+nmap <leader>e :Ack -G '\.e'<Space>
 
 
 " -- Vim Markdown -- "
