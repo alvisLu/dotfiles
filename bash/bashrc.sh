@@ -40,11 +40,14 @@ source /usr/share/fzf/key-bindings.bash
 
 
 # my scripts
-source $HOME/git/linux-environ-config/scripts/fzf-git.sh
-source $HOME/git/linux-environ-config/scripts/git-completion.bash
+[ -f "$HOME/git/linux-environ-config/scripts/fzf-git.sh" ] && source $HOME/git/linux-environ-config/scripts/fzf-git.sh
+[ -f "$HOME/git/linux-environ-config/scripts/git-completion.bash" ] && source $HOME/git/linux-environ-config/scripts/git-completion.bash
 
 # other scripts
 source $HOME/scripts/mapacode.bash
 
-
-
+# bash-git-prompt
+export GIT_PROMPT_ONLY_IN_REPO=1
+export GIT_PROMPT_SHOW_UNTRACKED_FILES=normal
+export GIT_PROMPT_THEME="Custom"
+[ -f "$HOME/.bash-git-prompt/gitprompt.sh" ] && source "$HOME/.bash-git-prompt/gitprompt.sh"
