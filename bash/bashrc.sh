@@ -35,16 +35,15 @@ export PATH=$PATH:/root/.gem/ruby/2.5.0/bin
 
 # nvm
 source /usr/share/nvm/init-nvm.sh
-# FZF
+# fzf
 source /usr/share/fzf/key-bindings.bash
-
 
 # my scripts
 [ -f "$HOME/git/linux-environ-config/scripts/fzf-git.sh" ] && source $HOME/git/linux-environ-config/scripts/fzf-git.sh
 [ -f "$HOME/git/linux-environ-config/scripts/git-completion.bash" ] && source $HOME/git/linux-environ-config/scripts/git-completion.bash
 
-# other scripts
-source $HOME/scripts/mapacode.bash
+# mapacode scripts
+[ -f "$HOME/scripts/mapacode.bash" ] && source $HOME/scripts/mapacode.bash
 
 # bash-git-prompt
 export GIT_PROMPT_ONLY_IN_REPO=1
