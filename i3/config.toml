@@ -1,0 +1,51 @@
+[theme]
+name = "modern"
+[theme.overrides]
+idle_bg = "#333333"
+
+[icons]
+name = "awesome"
+
+[[block]]
+block = "disk_space"
+path = "/"
+alias = "/"
+info_type = "available"
+unit = "GB"
+interval = 20
+warning = 20.0
+alert = 10.0
+
+[[block]]
+block = "music"
+player = "spotify"
+buttons = [ "prev", "play", "next"]
+max_width = 10
+
+[[block]]
+block = "battery"
+device = "BAT1"
+upower = true
+format = "{percentage}%"
+
+[[block]]
+block = "toggle"
+text = "HDMI"
+command_state = "exec xrandr | grep 'HDMI1 connected'"
+command_off = "xrandr --output HDMI1 --primary --auto --left-of eDP1 --output eDP1 --mode 1600x900"
+command_on = "xrandr --output eDP1 --primary --mode 1600x900"
+interval = 5
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
+block = "sound"
+on_click = "pavucontrol"
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %m/%d %R"
+on_click = "gsimplecal"
