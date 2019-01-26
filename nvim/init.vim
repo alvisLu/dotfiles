@@ -205,7 +205,7 @@ set diffopt+=vertical
 
 
 " -- FZF --"
-nmap <leader>f :FZF<CR>
+nmap <C-p> :FZF<CR>
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 let g:fzf_layout = { 'down': '~30%' }
 
