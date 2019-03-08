@@ -136,11 +136,6 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-for_window [class="Xfce4-notifyd"] floating enable
-for_window [class="Spotify"] move to workspace $ws10
-assign [class="Skype"] $ws10
-
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -255,8 +250,6 @@ bindsym $mod+m mode "$mode_display"
 exec_always --no-startup-id feh --bg-scale ~/picture/daniel-leone-197357.jpg
 
 # Auto start
-# Spotify
-exec --no-startup-id spotify
 # fcitx
 exec --no-startup-id fcitx
 # network manager applet
@@ -268,5 +261,16 @@ exec_always --no-startup-id xset r rate 280 30
 
 # hide window boarder
 for_window [class="^.*"] border pixel 3
+
+# floating window and workspace setting
+for_window [class="Xfce4-notifyd"] floating enable
+for_window [class="Galculator"] floating enable
+for_window [class="Google-chrome"] move to workspace $ws3
+
+# screenshooter
+bindsym $mod+p exec xfce4-screenshooter
+# galculator
+bindsym $mod+g exec galculator
+
 
 
