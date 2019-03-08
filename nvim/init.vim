@@ -50,6 +50,8 @@ Plug 'https://github.com/easymotion/vim-easymotion.git'
 Plug 'scrooloose/syntastic'
 Plug 'rust-lang/rust.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'alvan/vim-closetag'
 
 " -- Formatter -- "
 Plug 'https://github.com/Chiel92/vim-autoformat.git'
@@ -185,6 +187,9 @@ hi IndentGuidesEven ctermbg=darkgrey
 "let g:syntastic_javascript_checkers = ['eslint']
 "let g:syntastic_javascript_eslint_exec = 'eslint'
 
+
+" -- closetag -- "
+let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.js,*.html.erb,*.md'
 
 " -- vim-airline -- "
 let g:airline#extensions#tabline#enabled = 1
