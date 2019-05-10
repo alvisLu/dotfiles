@@ -29,6 +29,16 @@ font pango:LiHei Pro 12
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# The middle button and a modifer over any part of the window kills the window
+bindsym --whole-window $mod+button2 kill
+
+# The right button toggles floating
+bindsym button3 floating toggle
+
+# The side buttons move the window around
+bindsym button9 move left
+bindsym button8 move right
+
 # start a terminal
 bindsym $mod+Return exec xfce4-terminal
 
@@ -181,7 +191,6 @@ client.placeholder      #BFBFBF #333333 #BFBFBF #333333   #333333
 bar {
         font pango:DejaVu Sans Mono, FontAwesome 12
         #font pango:DejaVu Sans Mono, Icon 12
-        #status_command i3pystatus -c ~/.config/i3/config.py
         status_command i3status-rs ~/.config/i3/config.toml
         position top
         colors {
@@ -256,21 +265,31 @@ exec --no-startup-id fcitx
 exec --no-startup-id nm-applet
 # used Xfce4 setting
 exec --no-startup-id xfsettingsd --sm-client-disable
+# gnome-pomodoro
+exec --no-startup-id gnome-pomodoro
 # keyboard input repeat speed
 exec_always --no-startup-id xset r rate 280 30
+
+# gaps
+gaps outer 0
+gaps inner 0
 
 # hide window boarder
 for_window [class="^.*"] border pixel 3
 
 # floating window and workspace setting
+#for_window [class="VirtualBox Machine"] floating enable
 for_window [class="Xfce4-notifyd"] floating enable
 for_window [class="Galculator"] floating enable
+for_window [class="Pavucontrol"] floating enable
 for_window [class="Google-chrome"] move to workspace $ws3
 
 # screenshooter
 bindsym $mod+p exec xfce4-screenshooter
 # galculator
-bindsym $mod+g exec galculator
+bindsym $mod+Shift+g exec galculator
+# chromium
+bindsym $mod+g exec chromium
 
 
 
