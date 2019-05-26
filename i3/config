@@ -181,7 +181,7 @@ bindsym $mod+r mode "resize"
 
 # Colors
 # class                 border  backgr  text    indicator child_border
-client.focused          #292D2E #5F676A #BFBFBF #5F676A   #5F676A
+client.focused          #292D2E #5F676A #EEEEEC #5F676A   #5F676A
 client.focused_inactive #333333 #333333 #BFBFBF #333333   #333333
 client.unfocused        #333333 #333333 #BFBFBF #333333   #333333
 client.urgent           #292D2E #75404B #BFBFBF #75404B   #75404B
@@ -276,7 +276,7 @@ gaps outer 0
 gaps inner 0
 
 # hide window boarder
-for_window [class="^.*"] border pixel 3
+#for_window [class="^.*"] border pixel 3
 
 # floating window and workspace setting
 #for_window [class="VirtualBox Machine"] floating enable
