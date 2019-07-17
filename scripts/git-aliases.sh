@@ -7,10 +7,10 @@ git config --global alias.br branch
 git config --global alias.ci commit
 git config --global alias.cm "commit -m"
 git config --global alias.st status
-
 git config --global alias.undo "reset --soft HEAD~1"
+git config --global alias.df diff
 git config --global alias.last "log -1 HEAD"
-git config --global alias.difflast "diff --cached HEAD^"
+git config --global alias.dflast "diff --cached HEAD^"
 
 # git config --global alias.dsf '!f() { [ -z "$GIT_PREFIX" ] || cd "$GIT_PREFIX"'\
 # ' && git diff --color "$@" | diff-so-fancy  | less --tabs=4 -RFX; }; f'
