@@ -7,51 +7,44 @@ call plug#begin()
 Plug 'kristijanhusak/vim-hybrid-material'
 " tomorrow
 Plug 'https://github.com/chriskempson/vim-tomorrow-theme'
-
 " -- Airline and themes -- "
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
 " -- Sensible -- "
 Plug 'tpope/vim-sensible'
-
 " -- Fugitive" -- "
 Plug 'https://github.com/tpope/vim-fugitive.git'
-
 " -- NERDTreeToggle -- "
 Plug 'scrooloose/nerdtree'
-
 " -- NERDCommenter -- "
 Plug 'scrooloose/nerdcommenter'
-
 " -- NERDTabs -- "
 Plug 'https://github.com/jistr/vim-nerdtree-tabs.git'
-
 " -- NERDTree Syntax highlight -- "
 " 使用 NerdTree syntax highlight 時需安裝 vim-devicons 與 nerd-font
 Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight.git'
 " -- Vim Dev Iocns -- "
 "Plug 'https://github.com/ryanoasis/vim-devicons.git'
-
 " -- Tabular -- "
 Plug 'https://github.com/godlygeek/tabular.git'
-
 " -- FZF -- "
 Plug 'junegunn/fzf'
-
 " -- Ack -- "
 Plug 'mileszs/ack.vim'
 " 可安裝 [Silver Searcher](https://github.com/ggreer/the_silver_searcher) 使用 AG
-
 " -- Easymotion -- "
 Plug 'https://github.com/easymotion/vim-easymotion.git'
 
 " -- Syntax tool -- "
 Plug 'scrooloose/syntastic'
-Plug 'rust-lang/rust.vim'
-Plug 'pangloss/vim-javascript'
+"Plug 'rust-lang/rust.vim'
 Plug 'mxw/vim-jsx'
 Plug 'alvan/vim-closetag'
+Plug 'https://github.com/alunny/pegjs-vim'
+Plug 'pangloss/vim-javascript'
+
+" -- coc nvim -- "
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " -- Formatter -- "
 Plug 'https://github.com/Chiel92/vim-autoformat.git'
@@ -75,13 +68,7 @@ Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
 Plug 'https://github.com/jiangmiao/auto-pairs.git'
 
 " -- Deoplete -- "
-if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-endif
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
 
@@ -113,6 +100,9 @@ set listchars=tab:›\ ,trail:•,extends:»,precedes:«,nbsp:⎵
 set background=dark
 set t_Co=256
 set t_ut=
+
+" -- pegjs syntax on -- "
+setf pegjs
 
 colorscheme hybrid_reverse
 let g:enable_bold_font = 1
@@ -165,7 +155,6 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 let g:NERDTreeHighlightFolders = 1
 let g:NERDTreeHighlightFoldersFullName = 1
 
-
 " -- Indent Line -- "
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
@@ -189,7 +178,7 @@ hi IndentGuidesEven ctermbg=darkgrey
 
 
 " -- closetag -- "
-let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.js,*.html.erb,*.md'
+let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.js,*.ts*.html.erb,*.md'
 
 " -- vim-airline -- "
 let g:airline#extensions#tabline#enabled = 1
@@ -203,7 +192,7 @@ set hidden
 nmap <leader>m :bprevious<CR>
 nmap <leader>. :bnext<CR>
 nmap <leader>q :bp <BAR> bd #<CR>
-nmap <leader>b :ls<CR>:b<Space>
+nmap <leader>s :ls<CR>:b<Space>
 
 " -- Fugitive --"
 set diffopt+=vertical
@@ -214,8 +203,10 @@ nmap <C-p> :FZF<CR>
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 let g:fzf_layout = { 'down': '~30%' }
 
+" -- coc nvm -- "
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" --  Vim Prettier -- "
+" -- Vim Prettier -- "
 let g:prettier#autoformat = 0
 let g:prettier#config#print_width = 80
 let g:prettier#config#tab_width = 2
@@ -223,10 +214,10 @@ let g:prettier#config#use_tabs = 'false'
 let g:prettier#config#semi = 'true'
 let g:prettier#config#single_quote = 'true'
 let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#jsx_bracket_same_line = 'false'
+let g:prettier#config#jsx_bracket_same_line = 'true'
 let g:prettier#config#trailing_comma = 'all'
 let g:prettier#config#arrow_parens = 'always'
-let g:prettier#config#parser = 'babylon'
+let g:prettier#config#parser = 'flow'
 
 
 " -- Ack -- "
@@ -265,8 +256,6 @@ map <Localleader>k <Plug>(easymotion-k)
 map <Localleader>h <Plug>(easymotion-linebackward)
 " 'f' for Search first 2 characters
 nmap f <Plug>(easymotion-overwin-w)
-" 's' for Word motion
-nmap s <Plug>(easymotion-overwin-f2)
 " search motion
 map / <Plug>(easymotion-sn)
 
