@@ -38,10 +38,13 @@ Plug 'https://github.com/easymotion/vim-easymotion.git'
 " -- Syntax tool -- "
 Plug 'scrooloose/syntastic'
 "Plug 'rust-lang/rust.vim'
-Plug 'mxw/vim-jsx'
 Plug 'alvan/vim-closetag'
 Plug 'https://github.com/alunny/pegjs-vim'
+" -- js，jsx
 Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
+" -- ts，tsx
+Plug 'leafgarland/typescript-vim'
 
 " -- coc nvim -- "
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -178,7 +181,7 @@ hi IndentGuidesEven ctermbg=darkgrey
 
 
 " -- closetag -- "
-let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.js,*.ts*.html.erb,*.md'
+let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.js,*.tsx,*.html.erb,*.md'
 
 " -- vim-airline -- "
 let g:airline#extensions#tabline#enabled = 1
@@ -203,8 +206,14 @@ nmap <C-p> :FZF<CR>
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 let g:fzf_layout = { 'down': '~30%' }
 
+
 " -- coc nvm -- "
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+
+" -- vim-jsx-typescript -- "
+let g:typescript_ignore_browserwords = 1
+
 
 " -- Vim Prettier -- "
 let g:prettier#autoformat = 0
