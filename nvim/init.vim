@@ -47,7 +47,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
 
 " -- coc nvim -- "
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " -- Formatter -- "
 Plug 'https://github.com/Chiel92/vim-autoformat.git'
@@ -158,6 +158,13 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 let g:NERDTreeHighlightFolders = 1
 let g:NERDTreeHighlightFoldersFullName = 1
 
+" -- NERDCommenter -- "
+let g:NERDCustomDelimiters={
+  \ 'javascript': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
+  \ 'typescript': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
+  \ 'forth': { 'left': '\\ ', 'right': '', 'leftAlt': '( ', 'rightAlt': ' )' },
+  \}
+
 " -- Indent Line -- "
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
@@ -208,7 +215,7 @@ let g:fzf_layout = { 'down': '~30%' }
 
 
 " -- coc nvm -- "
-autocmd CursorHold * silent call CocActionAsync('highlight')
+"autocmd CursorHold * silent call CocActionAsync('highlight')
 
 
 " -- vim-jsx-typescript -- "
