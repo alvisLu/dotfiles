@@ -218,7 +218,7 @@ let g:fzf_layout = { 'down': '~30%' }
 "autocmd CursorHold * silent call CocActionAsync('highlight')
 
 
-" -- vim-jsx-typescript -- "
+" -- typescript-vim -- "
 let g:typescript_ignore_browserwords = 1
 
 
