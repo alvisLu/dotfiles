@@ -4,6 +4,7 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
 
 # Prompt
 #PS1='[\u@\h \W]\$ '
@@ -25,7 +26,8 @@ alias la='ls -laXr'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -i'
-
+alias vim="nvim"
+alias vi="nvim"
 
 export PATH=$HOME/bin:$PATH
 export TERM='screen-256color'
@@ -33,23 +35,21 @@ export EDITOR='nvim'
 # gem
 export PATH=$PATH:/root/.gem/ruby/2.5.0/bin
 
-# nvm
-source /usr/share/nvm/init-nvm.sh
 # fzf
 source /usr/share/fzf/key-bindings.bash
 
 # my scripts
-[ -f "$HOME/git/linux-environ-config/scripts/fzf-git.sh" ] && source $HOME/git/linux-environ-config/scripts/fzf-git.sh
-[ -f "$HOME/git/linux-environ-config/scripts/git-completion.bash" ] && source $HOME/git/linux-environ-config/scripts/git-completion.bash
-
-# mapacode scripts
-[ -f "$HOME/scripts/mapacode.bash" ] && source $HOME/scripts/mapacode.bash
+[ -f "$HOME/git/dotfiles/scripts/fzf-git.sh" ] && source $HOME/git/dotfiles/scripts/fzf-git.sh
+[ -f "$HOME/git/dotfiles/scripts/git-completion.bash" ] && source $HOME/git/dotfiles/scripts/git-completion.bash
+[ -f "$HOME/git/dotfiles/scripts/git-aliases.bash" ] && source $HOME/git/dotfiles/scripts/git-aliases.bash
 
 # bash-git-prompt
-export GIT_PROMPT_ONLY_IN_REPO=1
-export GIT_PROMPT_SHOW_UNTRACKED_FILES=normal
-export GIT_PROMPT_THEME="Custom"
-[ -f "$HOME/.bash-git-prompt/gitprompt.sh" ] && source "$HOME/.bash-git-prompt/gitprompt.sh"
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh"  ]; then
+    export GIT_PROMPT_ONLY_IN_REPO=1
+    export GIT_PROMPT_SHOW_UNTRACKED_FILES=normal
+    export GIT_PROMPT_THEME="Custom"
+    [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ] && source "$HOME/.bash-git-prompt/gitprompt.sh"
+fi
 
 #autojump
 set -o noclobber
