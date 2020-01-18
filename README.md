@@ -2,7 +2,6 @@
 
 My Linux System Environment Configuration.
 
-
 ## 目錄
 
 ### nvim
@@ -24,7 +23,7 @@ My Linux System Environment Configuration.
 
 ### xfce4
 
-1. terminal/my-terminal.theme is my XFCE4-terminal theme. It's based on Dark Pastels theme.
+1. `terminal/my-terminal.theme` is my XFCE4-terminal theme. It's based on Dark Pastels theme.
 
     Install to `/usr/share/xfce4/terminal/colorschemes`
 
@@ -34,6 +33,7 @@ My Linux System Environment Configuration.
 
 ### scripts
 
+1. `git-prompt-colors.sh`: 安裝 bash-git-prompt，並加入到 HOME/
 1. fzf-git.sh: [discription](https://junegunn.kr/2016/07/fzf-git/), [code](https://gist.github.com/junegunn/8b572b8d4b5eddd8b85e5f4d40f17236)
 
     更多的參考: [junegunn.kr](https://junegunn.kr/)
