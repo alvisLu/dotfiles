@@ -1,0 +1,8 @@
+! keycode 66 is Orgin Caps_Lock, keycode 37(control) is Orgin windows key
+! modified Caps_Lock => Control, control => Caps_Lock
+clear lock
+clear control
+clear mod1
+add control = Caps_Lock Control_L Control_R
+keycode 66 = Control_L
+keycode 37 = Caps_Lock

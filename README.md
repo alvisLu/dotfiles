@@ -38,6 +38,10 @@ My Linux System Environment Configuration.
 
     更多的參考: [junegunn.kr](https://junegunn.kr/)
 
+### Xmodmap
+
+`.Xmodmap`: 交換 左 Ctrl 與 Caps Lock，並在 `.xinit` 中加入執行。
+
 ### ThinkPad13
 
 * /etc/X11/xorg.conf.d/30-touchpad.conf: Touchpad 配置
