@@ -16,7 +16,7 @@ WHITE="\[$(tput setaf 7)\]"
 BOLD="\[$(tput bold)\]"
 RESET="\[$(tput sgr0)\]"
 
-PS1="${BOLD}${PURPLE}\W${YELLOW}ϟ${WHITE}: ${GREEN}>${RESET} "
+PS1="${BOLD}${PURPLE}\W${YELLOW}⚡${WHITE}: ${GREEN}>${RESET} "
 
 # some more aliases
 alias grep='grep --color=auto'
