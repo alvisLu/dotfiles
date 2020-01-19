@@ -1,3 +1,5 @@
+# my i3bar config
+
 [theme]
 name = "modern"
 [theme.overrides]
@@ -14,7 +16,7 @@ max_width = 10
 
 [[block]]
 block = "battery"
-device = "BAT1"
+device = "BAT0"
 upower = true
 format = "{percentage}%"
 
@@ -22,7 +24,7 @@ format = "{percentage}%"
 block = "toggle"
 text = "HDMI"
 command_state = "exec xrandr | grep 'HDMI1 connected'"
-command_off = "xrandr --output HDMI1 --primary --auto --right-of eDP1 --output eDP1 --mode 1368x768"
+command_off = "xrandr --output HDMI1 --primary --auto --left-of eDP1 --output eDP1 --mode 1368x768"
 command_on = "xrandr --output eDP1 --primary --mode 1368x768"
 interval = 5
 
