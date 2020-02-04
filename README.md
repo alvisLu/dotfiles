@@ -18,6 +18,8 @@ my `.bashrc`
 
 ### i3
 
+安裝 `i3-gaps`, `i3status-rust` ,`dmenu`, `lxappearance`
+
 * `config`: 需安裝 `i3-gaps`
 * `config.toml`: 需安裝 [i3status-rust](https://github.com/greshake/i3status-rust)
 
