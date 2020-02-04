@@ -35,6 +35,7 @@ bindsym --release button2 kill
 
 # The right button toggles floating
 bindsym button3 floating toggle
+bindsym --whole-window $mod+Shift+button3 floating toggle
 
 # The side buttons move the window around
 bindsym button9 move left
