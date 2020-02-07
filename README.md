@@ -23,6 +23,8 @@ my `.bashrc`
 ### nvim
 
 * 環境需先安裝
+
+    * vim-fcitx
     * [ack!](https://beyondgrep.com/install/)
     * [FZF](https://github.com/junegunn/fzf/blob/master/README-VIM.md)
 
