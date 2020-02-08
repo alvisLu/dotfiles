@@ -74,8 +74,16 @@ Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
 " -- Auto Pairs -- "
 Plug 'https://github.com/jiangmiao/auto-pairs.git'
 
+" -- vim tmux navigator -- "
+Plug 'christoomey/vim-tmux-navigator'
+
+" -- vimux -- "
+Plug 'benmills/vimux'
+
 " -- Deoplete -- "
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+
 
 call plug#end()
 
