@@ -18,7 +18,9 @@ my `.bashrc`
 
 ### i3
 
-* 安裝 `i3-gaps`, `i3status-rust` ,`dmenu`, `lxappearance`, `gsimplecal`
+* 安裝 `i3-gaps`, `i3lock`, `i3status`, `dmenu`, `playerctl`, `feh`, `powerline-fonts`, `speedtest-cli`, `lxappearance`, `gsimplecal`
+
+AUR: `ttf-font-awesome-4`, `i3status-rust`,
 
 ### nvim
 
@@ -60,5 +62,3 @@ my xinit config
 ### ThinkPad13
 
 * `/etc/X11/xorg.conf.d/30-touchpad.conf`: Touchpad 配置
-
-
