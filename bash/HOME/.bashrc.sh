@@ -18,6 +18,10 @@ RESET="\[$(tput sgr0)\]"
 
 PS1="${BOLD}${PURPLE}\W${YELLOW}⚡${WHITE}: ${GREEN}>${RESET} "
 
+export PATH=$HOME/bin:$PATH
+export TERM='screen-256color'
+export EDITOR='nvim'
+
 # some more aliases
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
@@ -28,10 +32,10 @@ alias mv='mv -iv'
 alias rm='rm -i'
 alias vim="nvim"
 alias vi="nvim"
+alias down='cd ~/Downloads'
+alias docu='cd ~/Documents'
+alias work='cd ~/workspace'
 
-export PATH=$HOME/bin:$PATH
-export TERM='screen-256color'
-export EDITOR='nvim'
 # gem
 export PATH=$PATH:/root/.gem/ruby/2.5.0/bin
 
@@ -52,5 +56,5 @@ if [ -f "$HOME/.bash-git-prompt/gitprompt.sh"  ]; then
 fi
 
 #autojump
+[[ -s /home/alivs/.autojump/etc/profile.d/autojump.sh ]] && source /home/alivs/.autojump/etc/profile.d/autojump.sh
 set -o noclobber
-
