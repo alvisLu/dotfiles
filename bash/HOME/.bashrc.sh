@@ -32,9 +32,6 @@ alias mv='mv -iv'
 alias rm='rm -i'
 alias vim="nvim"
 alias vi="nvim"
-alias down='cd ~/Downloads'
-alias docu='cd ~/Documents'
-alias work='cd ~/workspace'
 
 # gem
 export PATH=$PATH:/root/.gem/ruby/2.5.0/bin
@@ -56,5 +53,5 @@ if [ -f "$HOME/.bash-git-prompt/gitprompt.sh"  ]; then
 fi
 
 #autojump
-[[ -s /home/alivs/.autojump/etc/profile.d/autojump.sh ]] && source /home/alivs/.autojump/etc/profile.d/autojump.sh
+[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
 set -o noclobber
