@@ -143,6 +143,7 @@ let g:prettier#config#jsx_bracket_same_line = 'true'
 let g:prettier#config#trailing_comma = 'all'
 let g:prettier#config#arrow_parens = 'always'
 let g:prettier#config#parser = 'flow'
+autocmd BufWritePre *.js,*ts,*.json,*.css,*.scss,*.less,*.graphql Prettier
 
 
 " -- Ack -- "
