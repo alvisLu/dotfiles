@@ -57,7 +57,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'https://github.com/Chiel92/vim-autoformat.git'
 Plug 'prettier/vim-prettier', {
     \ 'do': 'npm install',
-    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
+    \ 'for': ['javascript', 'typescript', 'markdown', 'css', 'sass', 'scss',
+    \ 'json', 'graphql','markdown', 'yaml', 'html'] }
 
 " -- Markdown -- "
 " Markdown Syntax

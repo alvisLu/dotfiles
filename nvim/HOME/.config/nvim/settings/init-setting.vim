@@ -143,7 +143,7 @@ let g:prettier#config#jsx_bracket_same_line = 'true'
 let g:prettier#config#trailing_comma = 'all'
 let g:prettier#config#arrow_parens = 'always'
 let g:prettier#config#parser = 'flow'
-autocmd BufWritePre *.js,*ts,*.json,*.css,*.scss,*.less,*.graphql Prettier
+autocmd BufWritePre *.js,*.jsx,*ts,*tsx,*.md,*.json,*.css,*.scss,*.sass,*.html,*.yaml,*.graphql Prettier
 
 
 " -- Ack -- "
@@ -151,7 +151,7 @@ if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
 cnoreabbrev Ack Ack!
-nmap <leader>a :Ack<Space>
+nmap <leader>a :Ack -i<Space>
 " 指定收尋 xxx 檔
 " :Ack -G '\.xxx'
 
