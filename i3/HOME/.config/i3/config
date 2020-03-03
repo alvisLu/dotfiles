@@ -122,7 +122,9 @@ set $ws10 "10:"
 # workspace output
 workspace $ws1 output primary
 workspace $ws2 output primary
-workspace $ws10 output left
+workspace $ws3 output primary
+workspace $ws4 output primary
+workspace $ws10 output eDP1
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -245,9 +247,10 @@ bindsym $mod+Shift+e mode "$mode_system"
 
 
 # manual management of external displays
-set $mode_display Ext Screen (y)HDMI ON, (n)HDMI OFF
+set $mode_display Ext Screen [y]HDMI ON, [n]HDMI OFF
 mode "$mode_display" {
-    bindsym y exec --no-startup-id xrandr --output HDMI1 --primary --auto --left-of eDP1 --mode 1368x768
+
+    bindsym y exec --no-startup-id xrandr --output HDMI1 --primary --auto --left-of eDP1 --output eDP1 --mode 1368x768
     bindsym n exec --no-startup-id xrandr --output eDP1 --mode 1600x900
 
     # back to normal: Enter or Escape
