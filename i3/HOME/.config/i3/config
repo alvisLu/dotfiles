@@ -269,6 +269,8 @@ exec --no-startup-id fcitx
 exec --no-startup-id nm-applet
 # used Xfce4 setting
 exec --no-startup-id xfsettingsd --sm-client-disable
+# spotify
+exec --no-startup-id spotify
 # gnome-pomodoro
 exec --no-startup-id gnome-pomodoro
 # keyboard input repeat speed
