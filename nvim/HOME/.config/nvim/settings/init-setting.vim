@@ -143,7 +143,7 @@ let g:prettier#config#jsx_bracket_same_line = 'true'
 let g:prettier#config#trailing_comma = 'all'
 let g:prettier#config#arrow_parens = 'always'
 let g:prettier#config#parser = 'flow'
-autocmd BufWritePre *.js,*.jsx,*ts,*tsx,*.md,*.json,*.css,*.scss,*.sass,*.html,*.yaml,*.graphql Prettier
+autocmd BufWritePre *.js,*.jsx,*ts,*tsx,*.json,*.css,*.scss,*.sass,*.html,*.yaml,*.graphql Prettier
 
 
 " -- Ack -- "
@@ -159,6 +159,8 @@ nmap <leader>a :Ack -i<Space>
 " -- Vim Markdown -- "
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_conceal = 0
+
 
 
 " -- Tabularize -- "
@@ -198,3 +200,4 @@ map / <Plug>(easymotion-sn)
 
 " -- Use deoplete -- "
 let g:deoplete#enable_at_startup = 1
+
