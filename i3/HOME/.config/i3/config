@@ -289,6 +289,7 @@ for_window [class="Galculator"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Google-chrome"] move to workspace $ws3
 for_window [class="Spotify"] move to workspace $ws10
+for_window [class="pomodoro"] move to workspace $ws10
 
 # screenshooter
 bindsym $mod+p exec xfce4-screenshooter
