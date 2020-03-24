@@ -51,7 +51,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
 
 " -- coc nvim -- "
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " -- Formatter -- "
 Plug 'https://github.com/Chiel92/vim-autoformat.git'
@@ -84,6 +84,8 @@ Plug 'benmills/vimux'
 " -- Deoplete -- "
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 
 
 call plug#end()
@@ -91,4 +93,5 @@ call plug#end()
 " Settings
 for fpath in split(globpath('~/.config/nvim/settings', '*.vim'), '\n')
     exe 'source' fpath
-  endfor
+endfor
+
