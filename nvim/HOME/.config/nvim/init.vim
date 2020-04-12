@@ -41,24 +41,27 @@ Plug 'mileszs/ack.vim'
 " -- Easymotion -- "
 Plug 'https://github.com/easymotion/vim-easymotion.git'
 
+" -- vim closetag -- "
+Plug 'alvan/vim-closetag'
+
 " -- Syntax tool -- "
 Plug 'scrooloose/syntastic'
 "Plug 'rust-lang/rust.vim'
-Plug 'alvan/vim-closetag'
 " js, ts
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
+" -- vue -- "
+"Plug 'leafOfTree/vim-vue-plugin'
+Plug 'posva/vim-vue'
 
-" -- coc nvim -- "
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " -- Formatter -- "
 Plug 'https://github.com/Chiel92/vim-autoformat.git'
 Plug 'prettier/vim-prettier', {
     \ 'do': 'npm install',
     \ 'for': ['javascript', 'typescript', 'markdown', 'css', 'sass', 'scss',
-    \ 'json', 'graphql','markdown', 'yaml', 'html'] }
+    \ 'json', 'graphql','markdown', 'yaml', 'html', 'vue'] }
 
 " -- Markdown -- "
 " Markdown Syntax
@@ -81,11 +84,15 @@ Plug 'christoomey/vim-tmux-navigator'
 " -- vimux -- "
 Plug 'benmills/vimux'
 
-" -- Deoplete -- "
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
+" -- neosnippet -- "
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+
+" -- coc nvim -- "
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" -- Deoplete -- "
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 
 call plug#end()
