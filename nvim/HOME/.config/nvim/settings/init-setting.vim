@@ -2,8 +2,11 @@
 set hlsearch
 set autoindent
 set nu
+set ruler
 syntax on
+"set termguicolors
 set ignorecase
+set smartcase
 set mouse=a "可以使用滑鼠
 set fileencodings=utf8,big5
 set cursorline
@@ -22,7 +25,6 @@ set listchars=tab:›\ ,trail:•,extends:»,precedes:«,nbsp:⎵
 " Colorscheme
 set background=dark
 colorscheme hybrid_reverse
-let g:hybrid_transparent_background = 1
 
 " ctrl+[shift]+(x/c/v)
 vmap <C-S-x> "+x
@@ -96,7 +98,7 @@ hi IndentGuidesEven ctermbg=darkgrey
 
 
 " -- closetag -- "
-let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.js,*.ts,*.html.erb,*.md'
+let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.js,*.ts,*.vue,*.html.erb,*.md'
 
 
 " -- vim-airline -- "
@@ -143,7 +145,7 @@ let g:prettier#config#jsx_bracket_same_line = 'true'
 let g:prettier#config#trailing_comma = 'all'
 let g:prettier#config#arrow_parens = 'always'
 let g:prettier#config#parser = 'flow'
-autocmd BufWritePre *.js,*.jsx,*ts,*tsx,*.json,*.css,*.scss,*.sass,*.html,*.yaml,*.graphql Prettier
+autocmd BufWritePre *.vue,*.js,*.jsx,*ts,*tsx,*.json,*.css,*.scss,*.sass,*.html,*.yaml,*.graphql Prettier
 
 
 " -- Ack -- "
@@ -196,7 +198,6 @@ map / <Plug>(easymotion-sn)
  map <Leader>vq :VimuxCloseRunner<CR>
  map <Leader>vx :VimuxInterruptRunner<CR>
  map <Leader>vz :call VimuxZoomRunner()<CR>
-
 
 " -- Use deoplete -- "
 let g:deoplete#enable_at_startup = 1
