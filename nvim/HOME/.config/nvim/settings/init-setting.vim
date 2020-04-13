@@ -26,7 +26,7 @@ set listchars=tab:›\ ,trail:•,extends:»,precedes:«,nbsp:⎵
 set background=dark
 colorscheme hybrid_reverse
 
-" ctrl+[shift]+(x/c/v)
+" ctrl+shift+(x/c/v)
 vmap <C-S-x> "+x
 vmap <C-S-c> "+y
 imap <C-S-v> <Esc> "+gP
@@ -134,6 +134,8 @@ let g:typescript_ignore_browserwords = 1
 
 
 " -- Vim Prettier -- "
+
+nmap <leader>[ :Prettier<CR>
 let g:prettier#autoformat = 0
 let g:prettier#config#print_width = 80
 let g:prettier#config#tab_width = 2
