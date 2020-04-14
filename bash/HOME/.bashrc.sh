@@ -23,10 +23,15 @@ export TERM='screen-256color'
 export EDITOR='nvim'
 
 # some more aliases
-alias grep='grep --color=auto'
-alias ls='ls --color=auto'
-alias ll='ls -lXr'
-alias la='ls -laXr'
+# # color ls for linux
+# alias grep='grep --color=auto'
+# alias ls='ls --color=auto'
+# # color ls for mac
+alias grep='grep -G'
+alias ls='ls -G'
+
+alias ll='ls -l'
+alias la='ls -la'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -i'
@@ -37,7 +42,8 @@ alias vi="nvim"
 export PATH=$PATH:/root/.gem/ruby/2.5.0/bin
 
 # fzf
-source /usr/share/fzf/key-bindings.bash
+[ -f " /usr/share/fzf/key-bindings.bash" ] && source /usr/share/fzf/key-bindings.bash
+[ -f "$HOME/.fzf.bash" ] && source $HOME/.fzf.bash
 
 # my scripts
 [ -f "$HOME/git/dotfiles/scripts/fzf-git.sh" ] && source $HOME/git/dotfiles/scripts/fzf-git.sh
@@ -52,6 +58,6 @@ if [ -f "$HOME/.bash-git-prompt/gitprompt.sh"  ]; then
     [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ] && source "$HOME/.bash-git-prompt/gitprompt.sh"
 fi
 
-#autojump
+# autojump
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
 set -o noclobber
