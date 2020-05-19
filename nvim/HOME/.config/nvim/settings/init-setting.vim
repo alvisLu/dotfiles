@@ -154,15 +154,14 @@ let g:typescript_ignore_browserwords = 1
 
 
 " -- Vim Prettier -- "
-
 nmap <leader>[ :Prettier<CR>
 let g:prettier#autoformat = 0
 let g:prettier#config#print_width = 80
 let g:prettier#config#tab_width = 2
 let g:prettier#config#use_tabs = 'false'
 let g:prettier#config#semi = 'true'
-let g:prettier#config#single_quote = 'true'
 let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#single_quote = 'true'
 let g:prettier#config#jsx_bracket_same_line = 'true'
 let g:prettier#config#trailing_comma = 'all'
 let g:prettier#config#arrow_parens = 'always'
@@ -184,7 +183,7 @@ nmap <leader>a :Ack -i<Space>
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_conceal = 0
-
+let g:vim_markdown_conceal_code_blocks = 0
 
 
 " -- Tabularize -- "
