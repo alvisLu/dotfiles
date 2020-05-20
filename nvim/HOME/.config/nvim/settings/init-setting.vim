@@ -75,6 +75,7 @@ let g:NERDCustomDelimiters={
   \}
 
 " vue commenter
+let g:ft = ''
 function! NERDCommenter_before()
   if &ft == 'vue'
     let g:ft = 'vue'
@@ -87,13 +88,13 @@ function! NERDCommenter_before()
     endif
   endif
 endfunction
-
 function! NERDCommenter_after()
   if g:ft == 'vue'
     setf vue
     let g:ft = ''
   endif
 endfunction
+
 
 " -- Indent Line -- "
 let g:indent_guides_enable_on_vim_startup = 1
