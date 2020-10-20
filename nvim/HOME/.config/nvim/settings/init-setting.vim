@@ -119,7 +119,7 @@ hi IndentGuidesEven ctermbg=darkgrey
 
 
 " -- closetag -- "
-let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.js,*.ts,*.vue,*.html.erb,*.md'
+let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.js,*.mjs,*.ts,*.vue,*.html.erb,*.md'
 
 
 " -- vim-airline -- "
@@ -167,7 +167,7 @@ let g:prettier#config#jsx_bracket_same_line = 'true'
 let g:prettier#config#trailing_comma = 'all'
 let g:prettier#config#arrow_parens = 'always'
 let g:prettier#config#parser = 'flow'
-autocmd BufWritePre *.vue,*.js,*.jsx,*ts,*tsx,*.json,*.css,*.scss,*.sass,*.html,*.yaml,*.graphql Prettier
+autocmd BufWritePre *.vue,*.js,*.mjs,*.jsx,*ts,*tsx,*.json,*.css,*.scss,*.sass,*.html,*.yaml,*.graphql Prettier
 
 
 " -- Ack -- "
