@@ -1,0 +1,15 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": ["typescript","json"],
+
+  // prettier
+  "prettier.printWidth": 80,
+  "prettier.tabWidth": 2,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.bracketSpacing": true,
+  "prettier.arrowParens": "avoid",
+  "prettier.useTabs": false,
+  "prettier.endOfLine": "lf"
+
+}
