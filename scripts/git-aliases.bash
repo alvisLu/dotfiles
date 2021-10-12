@@ -12,17 +12,6 @@ git config --global alias.df diff
 git config --global alias.last "log -1 HEAD"
 git config --global alias.dflast "diff --cached HEAD^"
 
-# git config --global alias.dsf '!f() { [ -z "$GIT_PREFIX" ] || cd "$GIT_PREFIX"'\
-# ' && git diff --color "$@" | diff-so-fancy  | less --tabs=4 -RFX; }; f'
-
-git config --global alias.tree2 "log --graph --abbrev-commit --decorate "\
-"--pretty=oneline"
-
-git config --global alias.tree "log --graph --abbrev-commit --decorate "\
-"--format=format:'%C(bold yellow)%h %C(dim cyan)%cd %C(auto)%s %Creset"\
-"%C(dim white) (%an) %C(auto)%d' --date=format:%Y-%m-%d"
-
-
 # 中文顯示
 git config --global core.quotepath false
 # use nvim editor
