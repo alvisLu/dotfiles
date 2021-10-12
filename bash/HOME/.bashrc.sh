@@ -39,14 +39,14 @@ alias vim="nvim"
 alias vi="nvim"
 
 # gem
-export PATH=$PATH:/root/.gem/ruby/2.5.0/bin
+export PATH=$PATH:/root/.gem/ruby/2.7.0/bin
 
 # fzf
 [ -f " /usr/share/fzf/key-bindings.bash" ] && source /usr/share/fzf/key-bindings.bash
 [ -f "$HOME/.fzf.bash" ] && source $HOME/.fzf.bash
 
 # my scripts
-[ -f "$HOME/git/dotfiles/scripts/fzf-git.sh" ] && source $HOME/git/dotfiles/scripts/fzf-git.sh
+[ -f "$HOME/git/dotfiles/scripts/fzf/fzf-git.sh" ] && source $HOME/git/dotfiles/scripts/fzf/fzf-git.sh
 [ -f "$HOME/git/dotfiles/scripts/git-completion.bash" ] && source $HOME/git/dotfiles/scripts/git-completion.bash
 [ -f "$HOME/git/dotfiles/scripts/git-aliases.bash" ] && source $HOME/git/dotfiles/scripts/git-aliases.bash
 
