@@ -13,11 +13,19 @@ fzf-down() {
   fzf --height 100% --min-height 20 --border --bind ctrl-/:toggle-preview "$@"
 }
 
+#_gf() {
+  #is_in_git_repo || return
+  #git -c color.status=always status --short |
+  #fzf-down -m --ansi --nth 2..,.. \
+    #--preview '(git diff --color=always | diff-so-fancy -- {-1} | sed 1,4d; cat {-1})' |
+  #cut -c4- | sed 's/.* -> //'
+#}
+
 _gf() {
   is_in_git_repo || return
   git -c color.status=always status --short |
   fzf-down -m --ansi --nth 2..,.. \
-    --preview '(git diff --color=always | diff-so-fancy -- {-1} | sed 1,4d; cat {-1})' |
+    --preview '(git diff --color=always -- {-1} | sed 1,4d; cat {-1}) | diff-so-fancy' |
   cut -c4- | sed 's/.* -> //'
 }
 

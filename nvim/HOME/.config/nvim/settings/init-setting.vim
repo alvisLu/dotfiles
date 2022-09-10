@@ -101,14 +101,15 @@ set diffopt+=vertical
 nmap <C-p> :FZF<CR>
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 let g:fzf_layout = { 'down': '~30%' }
+" should be install [The Silver Searcher (ag)](https://github.com/ggreer/the_silver_searcher)
+nmap <leader>s :Ag<Space>
+
 " -- Ack -- "
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
 cnoreabbrev Ack Ack!
 nmap <leader>a :Ack -i<Space>
-" 指定收尋 xxx 檔
-" :Ack -G '\.xxx'
 
 " -- Vim Markdown -- "
 let g:vim_markdown_folding_disabled = 1
@@ -143,6 +144,13 @@ map / <Plug>(easymotion-sn)
 
 " Terraform auto FMT
 let g:terraform_fmt_on_save=1
+
+let g:gitgutter_set_sign_backgrounds = 1
+let g:gitgutter_sign_allow_clobber = 1
+let g:gitgutter_sign_column_always = 1
+"let g:gitgutter_eager = 1
+autocmd BufRead,BufNewFile * setlocal signcolumn=yes
+autocmd FileType tagbar,nerdtree setlocal signcolumn=no
 
 " COC
 " -- coc nvm -- "

@@ -10,13 +10,15 @@ call plug#begin()
 " color themes
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'https://github.com/chriskempson/vim-tomorrow-theme'
+Plug 'morhetz/gruvbox'
+Plug 'RRethy/nvim-base16'
 " -- Airline and themes -- "
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-
 " -- NERD -- "
 Plug 'scrooloose/nerdtree'
+"Plug 'preservim/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 "  使用 vim-devicons 系統需安裝 nerd-font
@@ -37,6 +39,8 @@ Plug 'mileszs/ack.vim'
 Plug 'https://github.com/easymotion/vim-easymotion.git'
 " -- Fugitive" -- "
 Plug 'https://github.com/tpope/vim-fugitive.git'
+" -- show git blame message --"
+Plug 'rhysd/git-messenger.vim'
 
 " -- tmux -- "
 Plug 'christoomey/vim-tmux-navigator'
