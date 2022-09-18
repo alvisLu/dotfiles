@@ -331,3 +331,21 @@ augroup lsp_install
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
+" ALE
+"let g:ale_completion_enabled = 1
+"let g:ale_completion_autoimport = 1
+"let g:ale_sign_column_always = 1
+"let g:ale_fix_on_save = 1
+"
+"nnoremap <silent> [g <Plug>(ale_next_wrap)
+"nnoremap <silent> ]g <Plug>(ale_previous_wrap)
+"
+"nnoremap <silent> gd :ALEGoToDefinition<CR>
+"nnoremap <silent> gr :ALEFindReferences<CR>
+"nnoremap <leader>rn :ALERename<CR>
+"nnoremap K :ALEHover<CR>
+"nnoremap <leader>qf :ALECodeAction<CR>
+"vnoremap <leader>qf :ALECodeAction<CR>
+"
+"let g:deoplete#enable_at_startup = 1
+

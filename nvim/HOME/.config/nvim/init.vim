@@ -62,6 +62,9 @@ Plug 'iamcco/markdown-preview.vim'
 Plug 'neoclide/coc.nvim'
 Plug 'honza/vim-snippets'
 
+"Plug 'dense-analysis/ale'
+"Plug 'Shougo/deoplete.nvim'
+
 call plug#end()
 
 " Settings
