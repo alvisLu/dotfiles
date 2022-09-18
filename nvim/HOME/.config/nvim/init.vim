@@ -6,23 +6,21 @@ endif
 
 call plug#begin()
 
-" -- Themes -- "
+" -- Color Themes -- "
 " color themes
 Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'https://github.com/chriskempson/vim-tomorrow-theme'
-Plug 'morhetz/gruvbox'
-Plug 'RRethy/nvim-base16'
+Plug 'EdenEast/nightfox.nvim'
+
 " -- Airline and themes -- "
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " -- NERD -- "
 Plug 'scrooloose/nerdtree'
-"Plug 'preservim/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 "  使用 vim-devicons 系統需安裝 nerd-font
-Plug 'ryanoasis/vim-devicons'
+"Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 
@@ -36,9 +34,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 
 " -- Easymotion -- "
-Plug 'https://github.com/easymotion/vim-easymotion.git'
-" -- Fugitive" -- "
-Plug 'https://github.com/tpope/vim-fugitive.git'
+Plug 'easymotion/vim-easymotion.git'
 " -- show git blame message --"
 Plug 'rhysd/git-messenger.vim'
 
@@ -48,15 +44,12 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " -- Syntax tool -- "
 Plug 'pangloss/vim-javascript'
-"Plug 'leafgarland/typescript-vim'
-" terraform
-Plug 'hashivim/vim-terraform'
 " Markdown "
-Plug 'https://github.com/plasticboy/vim-markdown.git'
+Plug 'plasticboy/vim-markdown.git'
 
 
 " -- Tabular -- "
-Plug 'https://github.com/godlygeek/tabular.git'
+Plug 'godlygeek/tabular.git'
 " -- Easy Align -- "
 Plug 'junegunn/vim-easy-align'
 " -- vim closetag -- "
@@ -66,7 +59,7 @@ Plug 'iamcco/markdown-preview.vim'
 
 
 " -- coc nvim -- "
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim'
 Plug 'honza/vim-snippets'
 
 call plug#end()

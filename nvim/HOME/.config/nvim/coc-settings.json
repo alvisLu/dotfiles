@@ -6,7 +6,7 @@
     "typescriptreact"
   ],
 
-  // prettier
+  "typescript.format.enabled": true,
   "prettier.printWidth": 80,
   "prettier.tabWidth": 2,
   "prettier.semi": true,
