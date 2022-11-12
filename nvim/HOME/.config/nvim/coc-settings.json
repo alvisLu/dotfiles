@@ -3,9 +3,10 @@
     "typescript",
     "javascript",
     "json",
-    "typescriptreact"
+    "typescriptreact",
+    "python"
   ],
-
+  "python.pythonPath": "python3",
   "typescript.format.enabled": true,
   "prettier.printWidth": 80,
   "prettier.tabWidth": 2,
