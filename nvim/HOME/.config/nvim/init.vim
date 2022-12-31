@@ -33,8 +33,6 @@ Plug 'junegunn/fzf.vim'
 " 可安裝 Silver Searcher(https://github.com/ggreer/the_silver_searcher) 使用 AG
 Plug 'mileszs/ack.vim'
 
-" -- Easymotion -- "
-Plug 'easymotion/vim-easymotion.git'
 " -- show git blame message --"
 Plug 'rhysd/git-messenger.vim'
 
@@ -44,12 +42,8 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " -- Syntax tool -- "
 Plug 'pangloss/vim-javascript'
-" Markdown "
-Plug 'plasticboy/vim-markdown.git'
 
 
-" -- Tabular -- "
-Plug 'godlygeek/tabular.git'
 " -- Easy Align -- "
 Plug 'junegunn/vim-easy-align'
 " -- vim closetag -- "
@@ -59,7 +53,7 @@ Plug 'iamcco/markdown-preview.vim'
 
 
 " -- coc nvim -- "
-Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 Plug 'honza/vim-snippets'
 
 "Plug 'dense-analysis/ale'
@@ -69,6 +63,6 @@ call plug#end()
 
 " Settings
 for fpath in split(globpath('~/.config/nvim/settings', '*.vim'), '\n')
-    exe 'source' fpath
+   exe 'source' fpath
 endfor
 

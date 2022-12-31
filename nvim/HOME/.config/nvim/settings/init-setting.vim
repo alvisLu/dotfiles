@@ -47,8 +47,6 @@ vnoremap <Leader>p "+p
 " -- Mapping -- "
 " Switch hlsearch
 nmap <F2> :set hlsearch!<CR>
-" Switch NERDTree
-nmap <F8> :NERDTreeToggle<CR>
 
 " -- Buffer management --"
 set hidden
@@ -56,12 +54,15 @@ nmap <Leader>m :bprevious<CR>
 nmap <Leader>. :bnext<CR>
 nmap <Leader>q :bp <BAR> bd #<CR>
 
-" -- NerdTree -- "
 " Window traversal
 map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-L> <C-W>l
 map <C-H> <C-W>h
+
+" -- NerdTree -- "
+" Switch NERDTree
+nmap <F8> :NERDTreeToggle<CR>
 " NerdTree-git
 let g:NERDTreeIgnore = ['^node_modules$']
 let g:NERDTreeGitStatusWithFlags = 1
@@ -101,38 +102,20 @@ endif
 cnoreabbrev Ack Ack!
 nmap <Leader>a :Ack -i<Space>
 
-" -- vim-markdown -- "
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_toc_autofit = 1
-let g:vim_markdown_conceal = 0
-let g:vim_markdown_conceal_code_blocks = 0
-
-" -- Tabularize -- "
-nmap <Leader>t= :Tabularize /=<CR>
-vmap <Leader>t= :Tabularize /=<CR>
-nmap <Leader>t; :Tabularize /:<CR>
-vmap <Leader>t; :Tabularize /:<CR>
-nmap <Leader>t;; :Tabularize /:\zs<CR>
-vmap <Leader>t;; :Tabularize /:\zs<CR>
-nmap <Leader>t, :Tabularize /,<CR>
-vmap <Leader>t, :Tabularize /,<CR>
-nmap <Leader>t :TableFormat<CR>
-vmap <Leader>t :TableFormat<CR>
-
-" -- Easy Motion -- "
-let g:EasyMotion_do_mapping = 0
-let g:EasyMotion_smartcase = 1
-" use hjkl motion and line mtion
-map <Localleader>l <Plug>(easymotion-lineforward)
-map <Localleader>j <Plug>(easymotion-j)
-map <Localleader>k <Plug>(easymotion-k)
-map <Localleader>h <Plug>(easymotion-linebackward)
-" 'f' for Search first 2 characters
-nmap f <Plug>(easymotion-overwin-w)
-" 's' for Word motion
-nmap s <Plug>(easymotion-overwin-f2)
-" search motion
-map / <Plug>(easymotion-sn)
+" " -- Easy Motion -- "
+" let g:EasyMotion_do_mapping = 0
+" let g:EasyMotion_smartcase = 1
+" " use hjkl motion and line mtion
+" map <Localleader>l <Plug>(easymotion-lineforward)
+" map <Localleader>j <Plug>(easymotion-j)
+" map <Localleader>k <Plug>(easymotion-k)
+" map <Localleader>h <Plug>(easymotion-linebackward)
+" " 'f' for Search first 2 characters
+" nmap f <Plug>(easymotion-overwin-w)
+" " 's' for Word motion
+" nmap s <Plug>(easymotion-overwin-f2)
+" " search motion
+" map / <Plug>(easymotion-sn)
 
 " -- vim gitgutter -- "
 let g:gitgutter_set_sign_backgrounds = 1
@@ -142,7 +125,7 @@ autocmd BufRead,BufNewFile * setlocal signcolumn=yes
 autocmd FileType tagbar,nerdtree setlocal signcolumn=no
 highlight! link SignColumn LineNr
 
-"
+
 " -- COC -- "
 " Some servers have issues with backup files, see #649.
 set nobackup
