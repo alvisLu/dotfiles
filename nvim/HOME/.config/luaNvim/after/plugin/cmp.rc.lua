@@ -16,7 +16,7 @@ end
 cmp.setup({
   snippet = {
     expand = function(args)
-      luasnip.lsp_expand(args.body)
+      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
 
@@ -57,12 +57,22 @@ cmp.setup({
     }),
   }),
   sources = cmp.config.sources({
+    { name = 'luasnip' },
     { name = 'nvim_lsp' },
+
   }, {
     { name = 'buffer' },
+    { name = 'path' },
   }),
   formatting = {
-    format = lspkind.cmp_format({ with_text = false, maxwidth = 50 })
+    format = lspkind.cmp_format({
+      with_text = true,
+      maxwidth = 50,
+      before = function(entry, vim_item)
+        vim_item.menu = "[" .. string.upper(entry.source.name) .. "]"
+        return vim_item
+      end
+    }),
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
@@ -71,6 +81,23 @@ cmp.setup({
   experimental = {
     ghost_text = true,
   },
+})
+
+
+cmp.setup.cmdline({ '/', '?' }, {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
 })
 
 vim.cmd [[
