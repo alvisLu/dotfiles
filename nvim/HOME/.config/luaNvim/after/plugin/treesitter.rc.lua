@@ -19,7 +19,7 @@ ts.setup {
     "yaml",
     "css",
     "html",
-    "fish",
+    "bash",
     "lua"
   },
 
