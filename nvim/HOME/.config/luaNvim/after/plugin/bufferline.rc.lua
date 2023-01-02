@@ -3,6 +3,7 @@ if (not status) then return end
 
 bufferline.setup({
   options = {
+    numbers = 'ordinal',
     close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
     right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
     left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
@@ -95,6 +96,17 @@ bufferline.setup({
     close_button_selected = {
       fg = '#fdf6e3',
     },
+    numbers = {
+      fg = '#cdcecf', --'#657b83',
+      bg = '#283a4f' --'#002b36'
+    },
+    numbers_visible = {
+      fg = '#fdf6e3',
+      bg = '#283a4f' --'#002b36'
+    },
+    numbers_selected = {
+      fg = '#fdf6e3',
+    },
     modified = {
       fg = '#cdcecf', --'#657b83',
       bg = '#283a4f' --'#002b36'
@@ -106,6 +118,10 @@ vim.keymap.set('n', '<leader>q', '<Cmd>Bdelete<CR>', {})
 
 vim.keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
 vim.keymap.set('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', {})
+
+vim.keymap.set('n', '<leader>,', '<Cmd>BufferLineMovePrev<CR>', {})
+vim.keymap.set('n', '<leader>.', '<Cmd>BufferLineMoveNext<CR>', {})
+
 vim.keymap.set('n', '<leader>1', '<Cmd>lua require("bufferline").go_to_buffer(1, true)<CR>', {})
 vim.keymap.set('n', '<leader>2', '<Cmd>lua require("bufferline").go_to_buffer(2, true)<CR>', {})
 vim.keymap.set('n', '<leader>3', '<Cmd>lua require("bufferline").go_to_buffer(3, true)<CR>', {})
