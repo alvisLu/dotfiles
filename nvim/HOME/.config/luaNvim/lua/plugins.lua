@@ -28,7 +28,6 @@ packer.startup(function(use)
   use 'L3MON4D3/LuaSnip' -- snippets loader
   use 'saadparwaiz1/cmp_luasnip'
   use 'rafamadriz/friendly-snippets' -- snippets collection
-
   use 'glepnir/lspsaga.nvim' -- LSP UIs
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   use 'williamboman/mason.nvim'
@@ -36,7 +35,8 @@ packer.startup(function(use)
 
   use {
     'nvim-treesitter/nvim-treesitter',
-    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    run = ':TSUpdate',
+    -- run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
   --use 'kyazdani42/nvim-web-devicons' -- File icons
   use 'nvim-telescope/telescope.nvim'
