@@ -1,6 +1,10 @@
 local status, saga = pcall(require, "lspsaga")
 if (not status) then return end
 
+-- saga.init_lsp_saga
+-- init_lsp_saga 支援到 commit: "b7b4777"
+-- https://stackoverflow.com/questions/75105397/my-neovim-setup-but-i-dont-know-how-to-fix-error
+
 saga.setup {
   server_filetype_map = {
     typescript = 'typescript'
