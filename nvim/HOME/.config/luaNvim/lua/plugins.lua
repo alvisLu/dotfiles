@@ -65,6 +65,8 @@ packer.startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
   use 'Yggdroot/indentLine'
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
 
   -- Comment tool
   use {
