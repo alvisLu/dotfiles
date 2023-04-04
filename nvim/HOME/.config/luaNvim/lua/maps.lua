@@ -21,7 +21,7 @@ keymap.set('n', '<C-a>', 'gg<S-v>G')
 keymap.set('n', 'te', ':tabedit')
 -- Split window
 keymap.set('n', 'ss', ':split<Return><C-w>w')
-keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
+keymap.set('n', 'vv', ':vsplit<Return><C-w>w')
 -- Move window
 keymap.set('', '<C-h>', '<C-w>h')
 keymap.set('', '<C-k>', '<C-w>k')
@@ -36,3 +36,5 @@ keymap.set('n', '<C-w><down>', '<C-w>-')
 
 -- Switch hlsearch
 keymap.set('n', '<F2>', ':set hlsearch!<CR>')
+
+keymap.set('n', '<leader>Q', '<cmd>qall!<CR>')
