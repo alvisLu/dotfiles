@@ -14,6 +14,7 @@ ts.setup {
     "javascript",
     "typescript",
     "tsx",
+    "vue",
     "toml",
     "json",
     "yaml",
