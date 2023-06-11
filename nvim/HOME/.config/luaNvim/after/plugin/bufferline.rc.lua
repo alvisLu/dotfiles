@@ -4,10 +4,10 @@ if (not status) then return end
 bufferline.setup({
   options = {
     numbers = 'ordinal',
-    close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
+    close_command = "Bdelete! %d",       -- can be a string | function, see "Mouse actions"
     right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
-    left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
-    middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
+    left_mouse_command = "buffer %d",    -- can be a string | function, see "Mouse actions"
+    middle_mouse_command = nil,          -- can be a string | function, see "Mouse actions"
     -- NOTE: this plugin is designed with this icon in mind,
     -- and so changing this is NOT recommended, this is intended
     -- as an escape hatch for people who cannot bear it for whatever reason
@@ -31,7 +31,7 @@ bufferline.setup({
     max_name_length = 30,
     max_prefix_length = 30, -- prefix used when a buffer is de-duplicated
     tab_size = 21,
-    diagnostics = false, -- | "nvim_lsp" | "coc",
+    diagnostics = false,    -- | "nvim_lsp" | "coc",
     diagnostics_update_in_insert = false,
 
     show_buffer_icons = true,
@@ -41,7 +41,7 @@ bufferline.setup({
     persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
     -- can also be a table containing 2 custom separators
     -- [focused and unfocused]. eg: { '|', '|' }
-    separator_style = "slant", -- | "thick" | "thin" | { 'any', 'any' },
+    separator_style = "thick", -- "slant" | "thick" | "thin" | "slope" | { 'any', 'any' },
     enforce_regular_tabs = true,
     always_show_bufferline = true,
     -- sort_by = 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' | function(buffer_a, buffer_b)
@@ -54,65 +54,12 @@ bufferline.setup({
         text = "File Explorer",
         text_align = "center",
         highlight = "Directory",
-        separator = true
       }
     },
   },
-  highlights = {
-    fill = {
-      bg = '#304059', --'#073642'
-    },
-    background = {
-      fg = '#cdcecf', --'#657b83',
-      bg = '#283a4f' --'#002b36'
-    },
-    buffer_visible = {
-      fg = '#cdcecf', --'#657b83',
-      bg = '#283a4f' --'#002b36'
-    },
-    buffer_selected = {
-      fg = '#fdf6e3',
-      bold = true,
-    },
-    separator = {
-      fg = '#304059', --'#073642',
-      bg = '#283a4f' --'#002b36'
-    },
-    separator_visible = {
-      fg = '#304059', --'#073642',
-      bg = '#283a4f' --'#002b36'
-    },
-    separator_selected = {
-      fg = '#304059', --'#073642',
-    },
-    close_button = {
-      fg = '#cdcecf', --'#657b83',
-      bg = '#283a4f' --'#002b36'
-    },
-    close_button_visible = {
-      fg = '#fdf6e3',
-      bg = '#283a4f' --'#002b36'
-    },
-    close_button_selected = {
-      fg = '#fdf6e3',
-    },
-    numbers = {
-      fg = '#cdcecf', --'#657b83',
-      bg = '#283a4f' --'#002b36'
-    },
-    numbers_visible = {
-      fg = '#fdf6e3',
-      bg = '#283a4f' --'#002b36'
-    },
-    numbers_selected = {
-      fg = '#fdf6e3',
-    },
-    modified = {
-      fg = '#cdcecf', --'#657b83',
-      bg = '#283a4f' --'#002b36'
-    },
-  },
+  highlights = {},
 })
+
 
 vim.keymap.set('n', '<leader>q', '<Cmd>Bdelete<CR>', {})
 
