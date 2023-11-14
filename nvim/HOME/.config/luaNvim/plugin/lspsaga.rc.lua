@@ -2,19 +2,17 @@ local status, saga = pcall(require, "lspsaga")
 if (not status) then return end
 
 saga.setup {
-  server_filetype_map = {
-    typescript = 'typescript',
-    javascript = 'javascript',
-    vue = 'vue',
+  ui = {
+    code_action = '', -- '💡'
   },
   outline = {
     keys = {
-      expand_or_jump = '<CR>',
+      toggle_or_open = '<CR>',
     },
   },
   finder = {
     keys = {
-      expand_or_jump = '<CR>',
+      toggle_or_open = '<CR>',
     },
   },
 }
@@ -22,9 +20,8 @@ saga.setup {
 local opts = { noremap = true, silent = true }
 -- "Lspsaga hover_doc" need install treesitter markdown and markdown_inline parser.
 vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>', opts)
-vim.keymap.set('n', 'gf', '<cmd>Lspsaga lsp_finder<CR>', opts)
+vim.keymap.set('n', 'gf', '<cmd>Lspsaga finder<CR>', opts)
 vim.keymap.set('n', 'gd', '<cmd>Lspsaga goto_definition<CR>', opts)
-vim.keymap.set('n', 'gp', '<cmd>Lspsaga peek_definition<CR>', opts)
 
 vim.keymap.set('n', 'gr', '<cmd>Lspsaga rename<CR>', opts)
 vim.keymap.set('n', 'go', '<cmd>Lspsaga outline<CR>', opts)
