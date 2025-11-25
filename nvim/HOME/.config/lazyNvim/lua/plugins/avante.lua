@@ -8,13 +8,17 @@ return {
     provider = "openai",
     -- auto_suggestions_provider = "openai",
     -- tokenizer = "tiktoken",
-    openai = {
-      endpoint = "https://api.openai.com/v1",
-      model = "gpt-4o",
-      timeout = 30000, -- Timeout in milliseconds
-      temperature = 0,
-      max_tokens = 4096,
-      ["local"] = false,
+    providers = {
+      openai = {
+        endpoint = "https://api.openai.com/v1",
+        model = "gpt-4o",
+        timeout = 30000, -- Timeout in milliseconds
+        max_tokens = 4096,
+        ["local"] = false,
+        extra_request_body = {
+          temperature = 0,
+        },
+      },
     },
     system_prompt = [[1. 我通常用 Typescript 寫程式碼。我喜歡先透過領域建模來處理程式碼架構。當學習新概念時，我發現類比特別有用。在專案規劃中，我傾向於從最終目標開始倒推。2. 請使用繁體中文交談。]],
     -- add any opts here
