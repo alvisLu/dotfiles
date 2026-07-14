@@ -27,7 +27,7 @@ gb() {
   sed 's#^remotes/##'
 }
 
-gh() {
+ghi() {
   is_in_git_repo || return
   git log --date=short --format="%C(bold dim blue)%cd %C(auto)%h %s%d %C(cyan)" --graph --color=always |
   fzf-down --ansi --no-sort --reverse --multi --bind 'ctrl-s:toggle-sort' \
@@ -48,5 +48,5 @@ gr() {
 bind '"\er": redraw-current-line'
 bind '"\C-f\C-f": "$(gf)\e\C-e\er"'
 bind '"\C-f\C-b": "$(gb)\e\C-e\er"'
-bind '"\C-f\C-h": "$(gh)\e\C-e\er"'
+bind '"\C-f\C-h": "$(ghi)\e\C-e\er"'
 bind '"\C-f\C-r": "$(gr)\e\C-e\er"'
