@@ -42,6 +42,12 @@ AUR: `ttf-font-awesome-4`, `i3status-rust`,
 
   更多的參考: [junegunn.kr](https://junegunn.kr/)
 
+- git-fuzzy/git-fuzzy-config.sh: [git-fuzzy](https://github.com/bigH/git-fuzzy) 的按鍵設定，把預設的 `Alt-*` 改成 `Ctrl-*`。
+
+  需先 clone git-fuzzy 到 `~/git/git-fuzzy` 並將 `bin` 加入 `PATH`（見 `.zshrc`）。
+  git-fuzzy 只會讀「當前工作目錄」下的 `.git-fuzzy-config`，所以這份設定是由 `.zshrc` source 進來以取得全域效果；
+  若只想覆蓋單一 repo，可在該 repo 根目錄 symlink 成 `.git-fuzzy-config`。
+
 ### tumx
 
 需安裝 [tmp](https://github.com/tmux-plugins/tpm)

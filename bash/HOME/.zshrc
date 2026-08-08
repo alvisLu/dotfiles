@@ -126,6 +126,7 @@ export PATH="/opt/homebrew/opt/mongodb-community@4.0/bin:$PATH"
 
 # git-fuzzy
 export PATH="/Users/alvis/git/git-fuzzy/bin:$PATH"
+[ -f "$HOME/git/dotfiles/scripts/git-fuzzy/git-fuzzy-config.sh" ] && source $HOME/git/dotfiles/scripts/git-fuzzy/git-fuzzy-config.sh
 
 export PATH="/opt/homebrew/bin:$PATH"
 
