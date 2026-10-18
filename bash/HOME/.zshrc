@@ -183,11 +183,12 @@ export CGO_LDFLAGS="-L/Users/alvis/git/whisper.cpp/build/src -L/Users/alvis/git/
 export PATH=$PATH:$HOME/lib/oracle-cli/bin
 
 
-# Claude Code 多帳號：claude-work 用預設 ~/.claude，claude-personal 用獨立資料夾（設定 symlink 到 ~/.claude）
-alias claude-work='claude'
-# claude-personal 每次啟動前先把 work 的 mcpServers 同步過來（單向，以 work 為準）
-unalias claude-personal 2>/dev/null
-claude-personal() {
+# Claude Code 多帳號：clw（work）用預設 ~/.claude，clp（personal）用獨立資料夾（設定 symlink 到 ~/.claude）
+alias cl='claude'
+alias clw='claude'
+# clp 每次啟動前先把 work 的 mcpServers 同步過來（單向，以 work 為準）
+unalias claude-personal clp 2>/dev/null; unfunction claude-personal 2>/dev/null
+clp() {
   python3 - <<'EOF'
 import json, os
 w = os.path.expanduser('~/.claude.json')
