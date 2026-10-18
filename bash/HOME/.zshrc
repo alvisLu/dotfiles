@@ -181,3 +181,23 @@ export CGO_CFLAGS="-I/Users/alvis/git/whisper.cpp/include -I/Users/alvis/git/whi
 export CGO_LDFLAGS="-L/Users/alvis/git/whisper.cpp/build/src -L/Users/alvis/git/whisper.cpp/build/ggml/src -L/Users/alvis/git/whisper.cpp/build/ggml/src/ggml-blas -L/Users/alvis/git/whisper.cpp/build/ggml/src/ggml-metal -lwhisper -lggml -lggml-base -lggml-cpu -lggml-blas -lggml-metal -Wl,-rpath,/Users/alvis/git/whisper.cpp/build/src -Wl,-rpath,/Users/alvis/git/whisper.cpp/build/ggml/src -Wl,-rpath,/Users/alvis/git/whisper.cpp/build/ggml/src/ggml-blas -Wl,-rpath,/Users/alvis/git/whisper.cpp/build/ggml/src/ggml-metal"
 
 export PATH=$PATH:$HOME/lib/oracle-cli/bin
+
+
+# Claude Code 多帳號：claude-work 用預設 ~/.claude，claude-personal 用獨立資料夾（設定 symlink 到 ~/.claude）
+alias claude-work='claude'
+# claude-personal 每次啟動前先把 work 的 mcpServers 同步過來（單向，以 work 為準）
+unalias claude-personal 2>/dev/null
+claude-personal() {
+  python3 - <<'EOF'
+import json, os
+w = os.path.expanduser('~/.claude.json')
+p = os.path.expanduser('~/.claude-personal/.claude.json')
+pd = json.load(open(p))
+pd['mcpServers'] = json.load(open(w)).get('mcpServers', {})
+tmp = p + '.tmp'
+json.dump(pd, open(tmp, 'w'), indent=2)
+os.chmod(tmp, 0o600)
+os.replace(tmp, p)
+EOF
+  CLAUDE_CONFIG_DIR=$HOME/.claude-personal claude "$@"
+}
