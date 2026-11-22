@@ -134,8 +134,10 @@ fi
 export PATH="/opt/homebrew/opt/mongodb-community@4.0/bin:$PATH"
 
 # git-fuzzy
-export PATH="/Users/alvis/git/git-fuzzy/bin:$PATH"
-[ -f "$HOME/git/dotfiles/scripts/git-fuzzy/git-fuzzy-config.sh" ] && source $HOME/git/dotfiles/scripts/git-fuzzy/git-fuzzy-config.sh
+export PATH="$HOME/git/git-fuzzy/bin:$PATH"
+# 各台機器 dotfiles clone 的位置不同，從 .zshrc symlink 的實際路徑推回 repo root
+DOTFILES="${${(%):-%x}:A:h:h:h}"
+[ -f "$DOTFILES/scripts/git-fuzzy/git-fuzzy-config.sh" ] && source "$DOTFILES/scripts/git-fuzzy/git-fuzzy-config.sh"
 
 export PATH="/opt/homebrew/bin:$PATH"
 
