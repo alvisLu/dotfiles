@@ -125,18 +125,18 @@ fi
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
 # my scripts
-[ -f "$HOME/git/dotfiles/diff-so-fancy/util.sh" ] && source $HOME/git/dotfiles/diff-so-fancy/util.sh
-[ -f "$HOME/git/dotfiles/scripts/git-aliases.bash" ] && source $HOME/git/dotfiles/scripts/git-aliases.bash
-[ -f "$HOME/git/dotfiles/scripts/fzf/fzf-git.sh" ] && source $HOME/git/dotfiles/scripts/fzf/fzf-git.sh
-[ -f "$HOME/git/dotfiles/scripts/fzf/fzf-git-binding.zsh" ] && source $HOME/git/dotfiles/scripts/fzf/fzf-git-binding.zsh
+# 各台機器 dotfiles clone 的位置不同，從 .zshrc symlink 的實際路徑推回 repo root
+DOTFILES="${${(%):-%x}:A:h:h:h}"
+[ -f "$DOTFILES/diff-so-fancy/util.sh" ] && source "$DOTFILES/diff-so-fancy/util.sh"
+[ -f "$DOTFILES/scripts/git-aliases.bash" ] && source "$DOTFILES/scripts/git-aliases.bash"
+[ -f "$DOTFILES/scripts/fzf/fzf-git.sh" ] && source "$DOTFILES/scripts/fzf/fzf-git.sh"
+[ -f "$DOTFILES/scripts/fzf/fzf-git-binding.zsh" ] && source "$DOTFILES/scripts/fzf/fzf-git-binding.zsh"
 
 # mongodb
 export PATH="/opt/homebrew/opt/mongodb-community@4.0/bin:$PATH"
 
 # git-fuzzy
 export PATH="$HOME/git/git-fuzzy/bin:$PATH"
-# 各台機器 dotfiles clone 的位置不同，從 .zshrc symlink 的實際路徑推回 repo root
-DOTFILES="${${(%):-%x}:A:h:h:h}"
 [ -f "$DOTFILES/scripts/git-fuzzy/git-fuzzy-config.sh" ] && source "$DOTFILES/scripts/git-fuzzy/git-fuzzy-config.sh"
 
 export PATH="/opt/homebrew/bin:$PATH"
