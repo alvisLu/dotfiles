@@ -1,0 +1,10 @@
+id = "alvis.notify-focus"
+name = "Notify Focus"
+version = "0.1.0"
+min_herdr_version = "0.8.2"
+description = "macOS notifications when an agent is done or blocked; clicking one focuses that agent's pane"
+platforms = ["macos"]
+
+[[events]]
+on = "pane.agent_status_changed"
+command = ["bash", "notify.sh"]

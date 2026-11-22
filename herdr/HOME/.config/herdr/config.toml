@@ -1,0 +1,101 @@
+onboarding = false
+[theme]
+name = "one-dark"
+auto_switch = false
+
+[ui]
+agent_panel_sort = "spaces"
+confirm_close = true
+pane_gaps = false
+
+[ui.sound]
+enabled = false
+
+# 系統通知改由 local-plugins/notify-focus 發（點了會跳到該 agent）
+[ui.toast]
+delivery = "off"
+delay_seconds = 1
+
+[keys]
+prefix = "ctrl+a"
+
+# --- 跟 tmux 對齊 ---
+split_vertical   = "prefix+\\"
+split_horizontal = "prefix+minus"
+
+focus_pane_left  = "prefix+h"
+focus_pane_down  = "prefix+j"
+focus_pane_up    = "prefix+k"
+focus_pane_right = "prefix+l"
+
+resize_pane_left  = "prefix+shift+h"
+resize_pane_down  = "prefix+shift+j"
+resize_pane_up    = "prefix+shift+k"
+resize_pane_right = "prefix+shift+l"
+
+new_tab      = "prefix+c"
+next_tab     = "prefix+n"
+previous_tab = "prefix+p"
+switch_tab   = "prefix+1..9"
+rename_tab   = "prefix+comma"
+close_tab    = "prefix+ampersand"
+
+close_pane      = "prefix+x"
+zoom            = "prefix+z"
+cycle_pane_next = "prefix+0"
+last_pane       = "prefix+semicolon"
+
+detach    = "prefix+d"
+copy_mode = "prefix+["
+help      = "prefix+?"
+
+workspace_picker = "prefix+s"
+goto             = "prefix+w"
+rename_workspace = "prefix+$"
+
+# workspace / agent 循環切換
+previous_workspace = "prefix+up"
+next_workspace     = "prefix+down"
+previous_agent     = "prefix+ctrl+k"
+next_agent         = "prefix+ctrl+j"
+
+# --- herdr 專屬，放在 tmux 沒用到的鍵 ---
+settings                 = "prefix+ctrl+s"
+reload_config            = "prefix+shift+r"
+resize_mode              = "prefix+r"
+toggle_sidebar           = "prefix+b"
+edit_scrollback          = "prefix+e"
+rename_pane              = "prefix+shift+p"
+new_workspace            = "prefix+shift+n"
+new_worktree             = "prefix+shift+g"
+close_workspace          = "prefix+ctrl+w"
+open_notification_target = "prefix+ctrl+o"
+
+# 交換 pane 位置（plain hjkl = focus、shift = resize、alt = swap）
+swap_pane_left  = "prefix+shift+["
+swap_pane_down  = "prefix+alt+j"
+swap_pane_up    = "prefix+alt+k"
+swap_pane_right = "prefix+shift+]"
+
+[[keys.command]]
+key = "prefix+g"
+type = "popup"
+command = "~/.tmux/open-fileref-herdr.sh"
+width = "80%"
+height = "60%"
+
+# --- herdr-nvim ---
+[[keys.command]]
+key = "prefix+e"
+type = "plugin_action"
+command = "chmarax.herdr-nvim.toggle"
+description = "nvim sidebar"
+
+[[keys.command]]
+key = "prefix+o"
+type = "plugin_action"
+command = "chmarax.herdr-nvim.pick-file"
+description = "open file from agent output"
+
+[experimental]
+kitty_graphics = true

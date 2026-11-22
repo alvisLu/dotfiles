@@ -16,6 +16,20 @@ my `.bashrc`
 
 - 安裝 [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) 後並執行 `util.sh`。
 
+### herdr
+
+- [herdr](https://herdr.dev) 設定，按鍵跟 tmux 對齊（prefix `C-a`）。
+- `local-plugins/notify-focus`: agent 完成或需要回應時發 macOS 通知，點了跳到該 pane。需 `brew install terminal-notifier`。
+- `.tmux/open-fileref-herdr.sh`: herdr `prefix + g` 的 popup，用 fzf 選 pane 輸出裡的 `path:line`，用 VSCode 開。
+- 安裝的 plugin 記在 herdr 自己管的 `plugins.json`，不進 repo，新機器要手動裝：
+
+  ```sh
+  herdr plugin link ~/.config/herdr/local-plugins/notify-focus
+  herdr plugin install ChmaraX/herdr-nvim
+  herdr plugin install kryptamine/herdr-auto-title
+  herdr plugin install JonasBaeumer/herdr-file-annotator
+  ```
+
 ### i3
 
 - 安裝 `i3-gaps`, `i3lock`, `i3status`, `dmenu`, `playerctl`, `feh`, `powerline-fonts`, `speedtest-cli`, `lxappearance`, `gsimplecal`
