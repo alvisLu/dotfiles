@@ -1,0 +1,31 @@
+#!/bin/zsh
+# tmux <-> herdr 切換器 (由 ~/.zshrc 的 exec mux 啟動)
+#   tmux  C-a C-o -> herdr        C-a d -> 結束
+#   herdr C-a d   -> 回 tmux
+
+FLAG="$HOME/.cache/mux-next"
+
+if [[ -n $TMUX || -n $HERDR_ENV ]]; then
+  print -u2 "mux: 已經在 tmux/herdr 裡面了"
+  exit 1
+fi
+
+mkdir -p "${FLAG:h}"
+next="${1:-tmux}"
+while [[ -n $next ]]; do
+  rm -f "$FLAG"
+  case $next in
+    tmux)
+      tmux attach 2>/dev/null || tmux new-session
+      next="$(cat "$FLAG" 2>/dev/null)"           # 沒旗標 -> 結束
+      ;;
+    herdr)
+      herdr
+      next="$(cat "$FLAG" 2>/dev/null || echo tmux)"  # 預設回 tmux
+      ;;
+    *)
+      next=""
+      ;;
+  esac
+done
+rm -f "$FLAG"
