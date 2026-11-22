@@ -1,3 +1,10 @@
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("/Users/alvis/.oh-my-zsh/custom/completions" $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -110,7 +117,11 @@ alias pip='pip3'
 
 # tmux
 [[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
+# Orca、Herdr app（herdr-core 開的終端機有 HC_TERMINAL_ID）自己管分頁，不包 tmux；
+# 其他終端機維持由 ~/.local/bin/mux 啟動的 tmux <-> herdr 切換器。
+if [[ -z "$TMUX" && -z "$HERDR_ENV" && -z "$HC_TERMINAL_ID" && "$TERM_PROGRAM" != "Orca" ]]; then
+  exec mux
+fi
 
 # autojump
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
@@ -202,3 +213,6 @@ os.replace(tmp, p)
 EOF
   CLAUDE_CONFIG_DIR=$HOME/.claude-personal claude "$@"
 }
+
+# Added by the Postman CLI installer
+export PATH='/Users/alvis/.local/bin':"$PATH"
